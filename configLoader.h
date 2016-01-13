@@ -1,10 +1,9 @@
-#ifndef CONFIGFILE_H
-#define CONFIGFILE_H
+#pragma once
 #include <string>
 #include <map>
-#include "globaltype.h"
+#include "mytype.h"
 /**
- * @file configfile.h
+ * @file configLoader.h
  * \brief Here some alias and struct to work with flux
  * @author (binaire) Alexandre Wery
  */
@@ -35,7 +34,7 @@ namespace binaire
      * @param defaultValue
      * @return
      */
-    binaire::uint_t getValueInt(const std::string &Value, const std::string &File, const binaire::uint_t &defaultValue);
+    uint_t getValueInt(const std::string &Value, const std::string &File, const uint_t &defaultValue);
 
     /**
      * @brief getValueChar
@@ -46,4 +45,3 @@ namespace binaire
      */
     char getValueChar(const std::string &Value, const std::string &File, const char &defaultValue);
 }
-#endif // CONFIGFILE_H

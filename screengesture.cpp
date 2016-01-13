@@ -1,25 +1,11 @@
+#include "screengesture.h"
 #include <iostream>
-#include "grille.h"
-#include "gameengine.h"
-#include "tool.h"
-#include "screen.h"
+#include "mytype.h"
+#include "shadowoverloaded.h"
 
 using namespace std;
-
 namespace binaire
 {
-    std::ostream &operator << (std::ostream &os, const __EscapeCmd &Mode)
-    {
-        os << Mode.s_CODE;
-        return os;
-    }
-
-    /**
-     * @private
-     * \brief TabLast
-     * Object to delete CVFrame creat by getBox
-     */
-    experimental::AutoRemover<CVFrame> TabLast;
     /**
      * @private
      * @var LastFrame
@@ -32,6 +18,14 @@ namespace binaire
      * \brief MainFrame
      */
     CVSurface MainFrame;
+
+    /**
+     * @private
+     * \brief TabLast
+     * Object to delete CVFrame creat by getBox
+     */
+    experimental::AutoRemover<CVFrame> TabLast;
+
 
     void clearBufScreen()
     {
@@ -57,20 +51,6 @@ namespace binaire
 
     }
 
-    /**
-     * \brief setColor
-     * creat escape Commande from KColor and KbColor
-     * @param coul
-     * Texte Color
-     * @param back
-     * BackGround Color
-     * @return
-     * escape structure
-     */
-    __EscapeCmd setColor(const string &coul, const string &back)
-    {
-        return "\033["+back+";"+coul+"m";
-    }
 
     const __EscapeCmd clearCMD()
     {
@@ -120,35 +100,12 @@ namespace binaire
     {
         return MainFrame[X][Y];
     }
-    /**
-    * \brief __EscapeCmd
-    * Constructor
-    * @param Code
-    * Escape Sequence
-    */
-    __EscapeCmd::__EscapeCmd(const string &Code) : s_CODE(Code)
-    {}
-
-    __EscapeCmd::__EscapeCmd(const char *Code) : __EscapeCmd(std::string(Code))
-    {}
-
-    /**
-     * \brief operator <<
-     * do comptible CCharColor with flux
-     * @param os
-     * @param Val
-     * @return
-     */
-    ostream &operator<<(ostream &os, const CCharColor &Val)
-    {
-        os << Val.second.s_CODE << Val.first << Val.second.s_postCODE;
-        return os;
-    }
-
     void resizeFrame(unsigned X, unsigned Y)
     {
         MainFrame.resize(X, CVLineFrame(Y, KPxEmpty));
         LastFrame.resize(X, CVLineFrame(Y, KPxEmpty));
+        while(TabLast.size()!=0)
+            TabLast.remove(TabLast.get(0));
     }
 
     const CCharColor &viewAt(unsigned X, unsigned Y)
@@ -160,34 +117,6 @@ namespace binaire
     {
         return MainFrame;
     }
-
-    bool operator ==(const CCharColor &PX, const char &Val)
-    {
-        return PX.first == Val;
-    }
-
-    bool operator ==(const char &Val, const CCharColor &PX)
-    {
-        return PX.first == Val;
-    }
-
-    bool operator !=(const CCharColor &PX, const char &Val)
-    {
-        return PX.first != Val;
-    }
-
-    bool operator !=(const char &Val, const CCharColor &PX)
-    {
-        return PX.first != Val;
-    }
-
-
-    //  __EscapeCmd
-
-    bool operator ==(const __EscapeCmd &, const __EscapeCmd &)
-    {return true;}
-
-    // CCharColorRef
 
     CVFrame &getBox(const uint_t &x, const uint_t y, const uint_t &heigh, const uint_t &width)
     {
@@ -250,6 +179,4 @@ namespace binaire
             Line[Line.size()-1].second.s_postCODE = setColor(KReset).s_CODE;
         }
     }
-
 }
-

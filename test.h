@@ -1,5 +1,4 @@
-#ifndef TEST_H
-#define TEST_H
+#pragma once
 #include <iostream>
 
 /**
@@ -17,6 +16,3 @@
  * @return
  */
 bool collisionTestMissile(std::ostream &os = std::cout);
-
-
-#endif // TEST_H

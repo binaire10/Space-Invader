@@ -1,8 +1,8 @@
-#ifndef GAMEENGINE_H
-#define GAMEENGINE_H
-#include <globaltype.h>
+#pragma once
 #include <array>
-#include "grille.h"
+#include "mytype.h"
+#include "myconst.h"
+#include "shadowoverloaded.h"
 
 
 /**
@@ -12,36 +12,6 @@
  */
 namespace binaire
 {
-    /**
-     * @var KPxEmpty
-     * \brief KPxEmpty
-     * fast access to An empty
-     */
-    const CCharColor KPxEmpty        = creatPix(KEmpty,           "");
-    /**
-     * @var KPxMissile
-     * \brief KPxMissile
-     * fast access to  Missile
-     */
-    const CCharColor KPxMissile      = creatPix(KMissile,         KRed);
-    /**
-     * @var KPxTorpedo
-     * \brief KPxTorpedo
-     * fast access to Torpedo
-     */
-    const CCharColor KPxTorpedo      = creatPix(KTorpedo,         KBlue);
-    /**
-     * @var KPxInsideInvader
-     * \brief KPxInsideInvader
-     * fast access to Invader
-     */
-    const CCharColor KPxInsideInvader= creatPix(KInsideInvader,   KInvadersColor);
-    /**
-     * @var KPxInsideMe
-     * \brief KPxInsideMe
-     * fast access to me
-     */
-    const CCharColor KPxInsideMe    = creatPix(KInsideMe,        KMyColor);
 
     // new system better
     /**
@@ -52,57 +22,6 @@ namespace binaire
      */
     void initSpace (CVFrame &GameFrame);
 
-    /**
-     * \brief recomputeFrame
-     * game physic work
-     * @param[out, in] GameFrame
-     * Screen buffer Frame
-     * @param[out] Win
-     * tell if player win
-     * @param[out] Lost
-     * tell if player lost
-     */
-    template<typename CV>
-    void recomputeFrame(CV &GameFrame, bool &Win, bool &Lost)
-    {
-        auto &FirstLine = GameFrame[0];
-        auto &LastLine = GameFrame[GameFrame.size()-1];
-        for(uint_t j(0) ; j<FirstLine.size() ; ++j)
-        {
-            if(FirstLine[j] == KTorpedo)
-                FirstLine[j] = KPxEmpty;
-        }
-
-        for(uint_t j(0) ; j<LastLine.size() ; ++j)
-        {
-            if(LastLine[j] == KMissile)
-                LastLine[j] = KPxEmpty;
-        }
-
-        for(uint_t i(1), z(GameFrame.size()-1) ; i<GameFrame.size() ; ++i, --z)
-        {
-            for(uint_t j(0) ; j<GameFrame[i].size() ; ++j)
-            {
-                if(GameFrame[i][j] == KTorpedo)
-                {
-                    if(projectileMoveTo(GameFrame[i][j], GameFrame[i-1][j], KInsideInvader))
-                    {
-                        Win = true;
-                        remove(GameFrame, i-1);
-                    }
-                }
-                else if(GameFrame[z][j] == KMissile)
-                {
-                    if(projectileMoveTo(GameFrame[z][j], GameFrame[z+1][j], KInsideMe))
-                    {
-                        Lost = true;
-                        remove(GameFrame, i+1);
-                    }
-                }
-
-            }
-        }
-    }
 
     /**
      * \brief manageInvader
@@ -204,6 +123,56 @@ namespace binaire
      * line position to be clear
      */
     void remove(CVSurface &GameFrame, unsigned Line);
-}
 
-#endif // GAMEENGINE_H
+    /**
+     * \brief recomputeFrame
+     * game physic work
+     * @param[out, in] GameFrame
+     * Screen buffer Frame
+     * @param[out] Win
+     * tell if player win
+     * @param[out] Lost
+     * tell if player lost
+     */
+    template<typename Space>
+    void recomputeFrame(Space &GameFrame, bool &Win, bool &Lost)
+    {
+        auto &FirstLine = GameFrame[0];
+        auto &LastLine = GameFrame[GameFrame.size()-1];
+        for(uint_t j(0) ; j<FirstLine.size() ; ++j)
+        {
+            if(FirstLine[j] == KTorpedo)
+                FirstLine[j] = KPxEmpty;
+        }
+
+        for(uint_t j(0) ; j<LastLine.size() ; ++j)
+        {
+            if(LastLine[j] == KMissile)
+                LastLine[j] = KPxEmpty;
+        }
+
+        for(uint_t i(1), z(GameFrame.size()-1) ; i<GameFrame.size() ; ++i, --z)
+        {
+            for(uint_t j(0) ; j<GameFrame[i].size() ; ++j)
+            {
+                if(GameFrame[i][j] == KTorpedo)
+                {
+                    if(projectileMoveTo(GameFrame[i][j], GameFrame[i-1][j], KInsideInvader))
+                    {
+                        Win = true;
+                        remove(GameFrame, i-1);
+                    }
+                }
+                else if(GameFrame[z][j] == KMissile)
+                {
+                    if(projectileMoveTo(GameFrame[z][j], GameFrame[z+1][j], KInsideMe))
+                    {
+                        Lost = true;
+                        remove(GameFrame, i+1);
+                    }
+                }
+
+            }
+        }
+    }
+}

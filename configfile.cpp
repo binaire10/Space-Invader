@@ -1,8 +1,8 @@
-#include "configfile.h"
+#include "configLoader.h"
 #include <map>
 #include <iostream>
 #include <fstream>
-#include "globaltype.h"
+#include "mytype.h"
 
 using namespace std;
 
@@ -31,7 +31,7 @@ namespace binaire
             while (offset<Line.size() && Line[offset]==' ') ++offset;
             while (offset<Line.size() && Line[offset]!=' ') Key.push_back(Line[offset++]);
             while (offset<Line.size() && Line[offset]==' ') ++offset;
-            if(offset>=Line.size() || Line[offset++] != '=')
+            if(offset>=Line.size() || Line[offset++] != ':')
                 continue;
             while (offset<Line.size() && Line[offset]==' ') ++offset;
             while (offset<Line.size()) Value.push_back(Line[offset++]);

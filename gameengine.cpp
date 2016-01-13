@@ -1,16 +1,13 @@
-#include "gameengine.h"
-#include "screen.h"
-#include "grille.h"
-#include <iostream>
 #include <cstring>
 #include <time.h>
 #include <valarray>
-#include "tool.h"
+#include "shadowTool.h"
+#include "gameengine.h"
+#include "shadowoverloaded.h"
 
 using namespace std;
 namespace binaire
 {
-
 
     bool projectileMoveTo(CCharColor &From, CCharColor &To, const char &Target)
     {
@@ -294,5 +291,5 @@ namespace binaire
             Space[CurrentLine+1][pos + Beg] = KPxMissile;
         }
     }
-
 }
+

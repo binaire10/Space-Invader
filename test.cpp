@@ -1,6 +1,5 @@
 #include "test.h"
 #include <stdexcept>
-#include "globaltype.h"
 #include "gameengine.h"
 
 using namespace std;

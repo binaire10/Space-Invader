@@ -1,10 +1,22 @@
-#ifndef SYSGAME_H
-#define SYSGAME_H
-#include "globaltype.h"
-#include "ostream"
+#pragma once
+#include <ostream>
 #include <unistd.h>
-#include "screen.h"
+#include "mytype.h"
+#include "myscreentype.h"
 
+
+/**
+ * @typedef funcManageMe
+ * \brief funcManageMe
+ * pointer function to an Manage Me type function
+ */
+typedef void(funcManageMe)(CVFrame &Space, unsigned &Pos, bool &Lost);
+/**
+ * @typedef funcManageInvader
+ * \brief funcManageInvader
+ * pointer function to an Manage Invader type function
+ */
+typedef void(funcManageInvader)(CVFrame &Space, int &Increment, unsigned &CurrentLine, unsigned &Beg, bool &Win, bool &ToShoot);
 
 /**
  * @file sysgame.h
@@ -14,44 +26,12 @@
 namespace binaire
 {
     /**
-     * @typedef funcManageMe
-     * \brief funcManageMe
-     * pointer function to an Manage Me type function
-     */
-    typedef void(funcManageMe)(CVFrame &Space, unsigned &Pos, bool &Lost);
-    /**
-     * @typedef funcManageInvader
-     * \brief funcManageInvader
-     * pointer function to an Manage Invader type function
-     */
-    typedef void(funcManageInvader)(CVFrame &Space, int &Increment, unsigned &CurrentLine, unsigned &Beg, bool &Win, bool &ToShoot);
-    /**
      * \brief run
      * Main Game function
      * @return
      */
     bool run();
-    /**
-     * \brief write
-     * function to made an rand speed output like typewriter
-     * @param os
-     * output stream
-     * @param Data
-     * String to print on screen
-     * @param uTime
-     * duration in microsecond
-     */
-    void write(std::ostream &os, const std::string &Data, const uint_t &uTime = 500000);
-    /**
-     * \brief centerText
-     * function to center texte
-     * @param Texte
-     * Text to transform
-     * @param size
-     * size of line
-     * @return
-     */
-    std::string centerText(const std::string &Texte, const uint_t &size);
+
     /**
      * @var AIme
      * \brief AIme
@@ -65,5 +45,3 @@ namespace binaire
      */
     extern funcManageInvader *AIinvader;
 }
-
-#endif // SYSGAME_H

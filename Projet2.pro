@@ -1,24 +1,29 @@
 HEADERS += \
-    screen.h \
-    grille.h \
-    globaltype.h \
     gameengine.h \
     test.h \
     sysgame.h \
-    tool.h \
-    nicefonctor.h \
-    configfile.h
+    mytype.h \
+    myconst.h \
+    myfonctor.h \
+    shadowclass.h \
+    shadowoverloaded.h \
+    shadowTool.h \
+    configLoader.h \
+    screengesture.h \
+    lightinitilize.h \
+    myscreentype.h
 
 SOURCES += \
-    screen.cpp \
     main.cpp \
-    grille.cpp \
     gameengine.cpp \
     test.cpp \
     sysgame.cpp \
-    configfile.cpp
+    configfile.cpp \
+    shadowclass.cpp \
+    shadowoverloaded.cpp \
+    screengesture.cpp
 CONFIG += console C++11
 
 DEFINES +=
 
-QMAKE_CXXFLAGS +=
+QMAKE_CXXFLAGS += -std=c++11

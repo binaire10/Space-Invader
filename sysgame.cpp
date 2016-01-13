@@ -1,8 +1,8 @@
 #include "sysgame.h"
-#include "screen.h"
-#include "gameengine.h"
 #include <unistd.h>
 #include <iostream>
+#include "gameengine.h"
+#include "screengesture.h"
 
 using namespace std;
 

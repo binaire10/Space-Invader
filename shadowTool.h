@@ -1,14 +1,13 @@
-#ifndef TOOL
-#define TOOL
+#pragma once
 #include <vector>
-#include "nicefonctor.h"
-#include "globaltype.h"
+#include "myfonctor.h"
 /**
- * @file tool.h
+ * @file shadowTool.h
  * \brief With Usage of Quantum Mecanic.
  * Smart Code to make smart code. Realy nice!! :-)
  * @author (binaire) Alexandre Wery
  */
+typedef unsigned uint_t;
 /**
  *  \brief namespace global
  * All tool are into this
@@ -55,7 +54,7 @@ namespace binaire
 
         template<typename Obj, typename... Arg>
         /**
-         * @class SignalObj tool.h
+         * @class SignalObj shadowTool.h
          * \brief The SignalObj class
          *
          * Class to link slots object Member
@@ -117,7 +116,7 @@ namespace binaire
 
         template<typename... Arg>
         /**
-         * @class Signal tool.h
+         * @class Signal shadowTool.h
          * \brief The Signal template class
          */
         class Signal
@@ -392,7 +391,6 @@ namespace binaire
         private:
             Type *m_ptr = nullptr;
         };
-
         template<typename Type>
         /**
          * @class vectorRef
@@ -402,6 +400,7 @@ namespace binaire
          */
         class vectorRef : public std::vector< RefElement<Type> >
         {
+
         public:
             /**
              * @typedef Element
@@ -537,4 +536,3 @@ namespace binaire
         };
     }
 }
-#endif // TOOL

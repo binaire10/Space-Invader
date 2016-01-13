@@ -1,16 +1,12 @@
 #include <iostream>
 #include <iomanip>
 #include <stdexcept>
-#include "screen.h"
-#include "gameengine.h"
-#include "grille.h"
 #include "test.h"
 #include "sysgame.h"
-#include "tool.h"
-#include "configfile.h"
 using namespace std;
 using namespace binaire;
 #define RESET(X, A) X = false; A = false
+
 
 int main()
 {/*
@@ -20,6 +16,7 @@ int main()
     else
         cout << voidF.str() << "[Test][Collision][Missile&Torpedo] -> FAILD" << endl;
     voidF.str("");*/
+
 
     try
     {
