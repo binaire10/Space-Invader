@@ -16,6 +16,8 @@
 #include <unistd.h> //read ()
 #include <sstream>
 #include <assert.h>
+#include <QtMultimedia>
+#include <QVector>
 #ifndef __WIN32__
 #include <termio.h>
 #endif
@@ -64,9 +66,29 @@ namespace SpaceInvader
 #endif
     }
 
+    void write(const string &Text, const unsigned &LineSize, const unsigned &uTime);
+
+    string CleanScreen()
+    {
+        return "\033[H\033[2J";
+    }
+
     string Reset()
     {
         return "\033[0m";
+    }
+
+    string gotoXY(unsigned X, unsigned Y)
+    {
+        return "\033[" + to_string(X+1) + ";" + to_string(Y) + "H";
+    }
+
+    void clearScreen(unsigned X, unsigned Y)
+    {
+        cout << gotoXY(0,0);
+        string EmptyLine(Y+1,' ');
+        for(unsigned i(0) ; i<=X ; ++i)
+            write(EmptyLine,Y+1,10000);
     }
 
     string SetColor(unsigned ColorId)
@@ -111,7 +133,11 @@ namespace SpaceInvader
                 usleep(uTime); // Si ce n'est pas la même lettre que la dernière tappée, on attend.
             else if(letter==' ' && alphaLast!=letter)
                 usleep(uTime*8/7); // Si c'est un espace ou un retour à la ligne on attend plus longtemps.
-            alphaLast = letter; // on récupère la dernière lettre tappée.
+
+           if(alphaLast==letter)
+                alphaLast = '\0';
+           else
+                alphaLast = letter; // on récupère la dernière lettre tappée.
         }
     }
 
@@ -159,6 +185,7 @@ namespace SpaceInvader
 
     void ManageScenar ( const unsigned &Level )
     {
+        cout << gotoXY(0,0);
         const string KStrIntroduction = "Cela faisait maintenant 2 jours que le drame s'etait produit. Johnny, bien decide a faire payer les coupables, "
                                         "acheta un vaisseau a un vieil ami. C'etait l'heure de la revanche.";
         const string KStrLevel2 ="4 jours depuis le drame. Johnny avancait peniblement au milieu des hordes ennemies, en cette douce matinee d'hiver,"
@@ -190,6 +217,7 @@ namespace SpaceInvader
             break;
         }
         sleep(5);
+        clearScreen(25,60);
     }
 
     char MoveTo(string::iterator &From, string::iterator &To)
@@ -399,6 +427,7 @@ namespace SpaceInvader
 
     void MainFont(const unsigned &EyeColor = KRouge, const unsigned &BodyColor = KNoir, const unsigned &BackGroundColor = KVert)
     {
+        cout << gotoXY(0,0);
         string Col  (SetColorAndBack(BodyColor, BodyColor));
         string Col2 (SetColorAndBack(EyeColor, EyeColor));
         string Col3 (SetColorAndBack(BackGroundColor, BodyColor));
@@ -443,16 +472,32 @@ namespace SpaceInvader
             else
                 cout << Reset();
             cout << *i;
+            usleep(5000);
         }
         cout << Reset() << flush;
+        sleep(2);
+        clearScreen(25,60);
     }
 
     void Run()
     {
+        QThread Thread;
+        QMediaPlayer player;
+        player.moveToThread(&Thread);
+        player.setVolume(50);
+        QVector<QUrl> playlist;
+        playlist.push_back(QUrl(QString::fromStdString(KIntroSound)));
+        playlist.push_back(QUrl(QString::fromStdString(KEndSound)));
+        playlist.push_back(QUrl(QString::fromStdString(KGameOverSound)));
+        playlist.push_back(QUrl(QString::fromStdString(KHistoSound)));
+        playlist.push_back(QUrl(QString::fromStdString(KGameSound)));
+
+        player.setMedia(playlist[0]);
+        player.play();
+
         srand (time(NULL));
         set_input_mode();
         MainFont();
-        sleep(2);
         CVString Space;
         int FinalScore(0);
         unsigned Level(0);
@@ -466,16 +511,30 @@ namespace SpaceInvader
             bool Increment(true);
             int FireWait(0);
             initSpace(Space, PosMe, PosInvader);
+            cout << CleanScreen();
+
+            player.stop();
+            player.setMedia(playlist[3]);
+            player.play();
+
             ManageScenar(Level);
+
+            player.stop();
+            player.setMedia(playlist[4]);
+            player.play();
+
+            cout << CleanScreen();
             while(!WinTest(Space, LineInvader) && !LoseTest(Space, Space.size()-1))
             {
                 unsigned LastInvaderCount (FirstInvaderCount);
                 Score -= 10;
+
                 if(LastInvaderCount != FirstInvaderCount)
                 {
                     ManageBonus(Space, LineInvader);
                     Score += 100;
                 }
+
                 for(unsigned i(0) ; i<KRatioMeInvaders &&  (!WinTest(Space, LineInvader) && !LoseTest(Space, Space.size()-1)); ++i)
                 {
                     ManageMissileAndTorpedo(Space, FirstInvaderCount, PlayerLife);
@@ -483,7 +542,7 @@ namespace SpaceInvader
                         ManageInvaderShoot(Space, LineInvader, PosInvader, PlayerLife);
                     chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
                     ManageMe(Space, PosMe, FireWait);
-                    cout << "\t\t\t" << SetColorAndBack(KNoir, KRouge) << string(KSizeLine+2,'-') << Reset() << endl;
+                    cout << gotoXY(0,0) << "\t\t\t" << SetColorAndBack(KNoir, KRouge) << string(KSizeLine+2,'-') << Reset() << endl;
                     for(const string &Line : Space)
                     {
                         cout << "\t\t\t" << SetColorAndBack(KNoir, KRouge) << '|' << Reset();
@@ -498,10 +557,27 @@ namespace SpaceInvader
                     if(duration<350000)
                         usleep(350000-duration);
                 }
+                if(player.state() != QMediaPlayer::PlayingState)
+                    player.play();
+
                 ManageInvaderMove(Space, Increment,  LineInvader, PosInvader);
             }
             if(PlayerLife==0)
+            {
+
+                player.stop();
+                player.setMedia(playlist[2]);
+                player.play();
+
                 MainFont(KNoir,KRouge, KNoir);
+            }
+            else if(Level == 4)
+            {
+                player.stop();
+                player.setMedia(playlist[1]);
+                player.play();
+
+            }
             FinalScore += Score;
         }
     }

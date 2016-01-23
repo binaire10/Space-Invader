@@ -152,4 +152,20 @@ namespace SpaceInvader
     const unsigned KBegMe      =  GetValueInt("KBegMe","config.yaml", 5);  // NumÃ©ro de colonne où commence le joueur
 
     const char KBonus = GetValueChar("KBonus","config.yaml", '*')!=KEmpty ? GetValueChar("KBonus","config.yaml", '*') : '*';
+
+    const std::string KIntroSound = GetValueStr("KIntroSound", "config.yaml", "http://216.227.134.162/ost/space-invaders-gbc-gb-/xanousrrne/01-title-screen.mp3");
+
+    const std::string KHistoSound = GetValueStr("KHistoSound", "config.yaml", "http://cdn.frustra.org/sounds/sound/vo/core01/space21.mp3");
+
+    const std::string KGameSound = GetValueStr("KGameSound", "config.yaml", "http://216.227.134.162/ost/space-invaders-gbc-gb-/tmymegclzp/12-invader-homeworld.mp3");
+
+    const std::string KGameSound2 = GetValueStr("KGameSound2", "config.yaml", "http://216.227.134.162/ost/space-invaders-gbc-gb-/tmymegclzp/12-invader-homeworld.mp3");
+
+    const std::string KGameSound3 = GetValueStr("KGameSound3", "config.yaml", "http://216.227.134.162/ost/space-invaders-gbc-gb-/tmymegclzp/12-invader-homeworld.mp3");
+
+    const std::string KGameSound4 = GetValueStr("KGameSound4", "config.yaml", "http://216.227.134.162/ost/space-invaders-gbc-gb-/tmymegclzp/12-invader-homeworld.mp3");
+
+    const std::string KEndSound = GetValueStr("KEndSound", "config.yaml", "http://i1.theportalwiki.net/img/1/1e/Portal2-13-Want_You_Gone_RT.mp3");
+
+    const std::string KGameOverSound = GetValueStr("KGameOverSound", "config.yaml", "http://216.227.134.162/ost/pokemon-yellow-blue-red-gb-/oacqzkmnml/01-opening-part-1-.mp3");
 }//namespace

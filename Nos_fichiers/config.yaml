@@ -23,3 +23,10 @@ KBegMe				 : 5
 KSizeLine   		 : 10
 KSizeSpace  		 : 10
 KEmpty               : 
+
+// Adresse des ressources audio en ligne ou sur le PC (pour un fichier present du le PC le format est files:///ADRESSE_VERS_LE_FICHIERS)
+KIntroSound          : http://216.227.134.162/ost/space-invaders-gbc-gb-/xanousrrne/01-title-screen.mp3
+KHistoSound          : http://cdn.frustra.org/sounds/sound/vo/core01/space21.mp3
+KGameSound           : http://216.227.134.162/ost/space-invaders-gbc-gb-/tmymegclzp/12-invader-homeworld.mp3
+KGameOverSound        : http://216.227.134.162/ost/pokemon-yellow-blue-red-gb-/oacqzkmnml/01-opening-part-1-.mp3
+KEndSound             : http://i1.theportalwiki.net/img/1/1e/Portal2-13-Want_You_Gone_RT.mp3
