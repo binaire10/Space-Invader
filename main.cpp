@@ -1,34 +1,17 @@
 #include <iostream>
-#include <iomanip>
 #include <stdexcept>
-#include "test.h"
-#include "sysgame.h"
+#include "Nos_fichiers/SpaceInvader.h"
 using namespace std;
-using namespace binaire;
-#define RESET(X, A) X = false; A = false
-
+using namespace SpaceInvader;
 
 int main()
-{/*
-    std::stringstream voidF;
-    if(collisionTestMissile(voidF))
-        cout << "[Test][Collision][Missile&Torpedo] -> All OK" << endl;
-    else
-        cout << voidF.str() << "[Test][Collision][Missile&Torpedo] -> FAILD" << endl;
-    voidF.str("");*/
-
-
-    try
-    {
-        run();
+{
+    try {
+        Run();
     }
-    catch(exception &e)
+    catch (const out_of_range & e)
     {
-        cerr << e.what() << endl;
-    }
-    catch(...)
-    {
-        cerr << "something wrong" << endl;
+        cout<< e.what() << endl;
     }
 
     return 0;
