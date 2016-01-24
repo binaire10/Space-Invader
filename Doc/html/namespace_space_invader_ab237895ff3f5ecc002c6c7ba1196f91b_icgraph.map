@@ -1,0 +1,5 @@
+<map id="SpaceInvader::SetColor" name="SpaceInvader::SetColor">
+<area shape="rect" id="node2" href="$namespace_space_invader.html#a8b5541f5ea5fe5ca9347ed1758db82b6" title="PrintGameLine Fonction pour afficher la grille de jeux. " alt="" coords="211,5,404,32"/>
+<area shape="rect" id="node3" href="$namespace_space_invader.html#a643f4832fba2d915380eb6f3fd1b5d93" title="Run Programe principale du jeux. " alt="" coords="452,5,583,32"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="631,5,681,32"/>
+</map>

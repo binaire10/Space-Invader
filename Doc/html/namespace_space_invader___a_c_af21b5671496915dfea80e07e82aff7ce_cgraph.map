@@ -1,0 +1,4 @@
+<map id="SpaceInvader_AC::ManageCollisions" name="SpaceInvader_AC::ManageCollisions">
+<area shape="rect" id="node2" href="$namespace_space_invader___a_c.html#a722ec22c3b96b5780b416b0756b8ca83" title="Gère les collisions (multiples) entre les missiles et les tropilles. " alt="" coords="288,5,484,47"/>
+<area shape="rect" id="node3" href="$namespace_space_invader___a_c.html#aee7d14d2a386f48b6d57ffa5a6b3cbf5" title="Gère les collisions entre les objets et les vaisseaux. " alt="" coords="295,71,477,112"/>
+</map>

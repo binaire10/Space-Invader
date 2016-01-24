@@ -1,0 +1,5 @@
+<map id="SpaceInvader::SetColorAndBack" name="SpaceInvader::SetColorAndBack">
+<area shape="rect" id="node2" href="$namespace_space_invader.html#a8127d2d40fed59672a0ba798b6033258" title="MainFont Fonction qui affiche un invader. " alt="" coords="264,5,425,32"/>
+<area shape="rect" id="node3" href="$namespace_space_invader.html#a643f4832fba2d915380eb6f3fd1b5d93" title="Run Programe principale du jeux. " alt="" coords="473,31,604,57"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="652,31,703,57"/>
+</map>

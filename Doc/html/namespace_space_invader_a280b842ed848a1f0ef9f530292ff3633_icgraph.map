@@ -1,0 +1,6 @@
+<map id="SpaceInvader::MoveTo" name="SpaceInvader::MoveTo">
+<area shape="rect" id="node2" href="$namespace_space_invader.html#a608985cad8a7c24e3803f2074f58510a" title="ManageInvaderShoot Fonction qui fait tirée l&#39;invader. " alt="" coords="205,5,398,47"/>
+<area shape="rect" id="node5" href="$namespace_space_invader.html#a99ec6f5c32e5681b117ad911ad582e1f" title="ManageMissileAndTorpedo Controle la physique de déplacement d&#39;objet telle que des missile..." alt="" coords="204,71,399,112"/>
+<area shape="rect" id="node3" href="$namespace_space_invader.html#a643f4832fba2d915380eb6f3fd1b5d93" title="Run Programe principale du jeux. " alt="" coords="447,46,577,73"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="625,46,676,73"/>
+</map>

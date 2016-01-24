@@ -1,0 +1,4 @@
+<map id="SpaceInvader_AC::PutAllObjects" name="SpaceInvader_AC::PutAllObjects">
+<area shape="rect" id="node2" href="$namespace_space_invader___a_c.html#a82e94b15569656393c8eb46af9e41c57" title="Alias vers une ligne vide de l&#39;esapce. " alt="" coords="273,5,475,32"/>
+<area shape="rect" id="node3" href="$namespace_space_invader___a_c.html#a555dcd4e2fadcbc00e36ac1561e53752" title="Permet d&#39;insérer le carcactère passé en second paramètre à toutes les positions souhaitées (1er paramètre) d..." alt="" coords="265,56,483,83"/>
+</map>

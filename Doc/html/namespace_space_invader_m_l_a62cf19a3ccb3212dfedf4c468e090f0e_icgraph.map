@@ -1,0 +1,5 @@
+<map id="SpaceInvaderML::Shoot" name="SpaceInvaderML::Shoot">
+<area shape="rect" id="node2" href="$namespace_space_invader_m_l.html#a5c5ea3828108fcf61607a652f92db4dd" title="Simule le jeu de l&#39;envahisseur. " alt="" coords="212,5,423,32"/>
+<area shape="rect" id="node4" href="$namespace_space_invader_m_l.html#ad101278b690578b496895b2bf4643d41" title="Simule le jeu du joueur. " alt="" coords="223,56,412,83"/>
+<area shape="rect" id="node3" href="$namespace_space_invader_m_l.html#a6c7cce1e49f2836ada372ea9668ff633" title="simule le jeux " alt="" coords="471,31,680,57"/>
+</map>

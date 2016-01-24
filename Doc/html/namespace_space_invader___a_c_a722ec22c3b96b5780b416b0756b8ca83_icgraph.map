@@ -1,0 +1,5 @@
+<map id="SpaceInvader_AC::CollisionBetweenMissilesAndTorpedos" name="SpaceInvader_AC::CollisionBetweenMissilesAndTorpedos">
+<area shape="rect" id="node2" href="$namespace_space_invader___a_c.html#af21b5671496915dfea80e07e82aff7ce" title="Gère toutes les collisions du jeu. " alt="" coords="249,13,484,39"/>
+<area shape="rect" id="node3" href="$namespace_space_invader___a_c.html#ad3f2204d91cbaa72468bf69a7278a888" title="Fonction principale du jeu sans option. " alt="" coords="532,13,748,39"/>
+<area shape="rect" id="node4" href="$namespace_space_invader___a_c.html#a19a4587542121d3bc0ccd306d18cc441" title="SpaceInvader_AC::ppal" alt="" coords="796,13,952,39"/>
+</map>

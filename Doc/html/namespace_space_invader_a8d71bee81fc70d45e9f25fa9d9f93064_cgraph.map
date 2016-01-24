@@ -1,0 +1,4 @@
+<map id="SpaceInvader::clearScreen" name="SpaceInvader::clearScreen">
+<area shape="rect" id="node2" href="$namespace_space_invader.html#a9938cccb2881952d6cbf24f44c4e37e2" title="GotoXY Permet de déplacer le curseur. " alt="" coords="412,5,563,32"/>
+<area shape="rect" id="node3" href="$namespace_space_invader.html#ae02274db8c94a4211488379c16f17374" title="write permet d&#39;écrire du texte sur la console à l&#39;image d&#39;un machine à écrire " alt="" coords="229,31,364,57"/>
+</map>

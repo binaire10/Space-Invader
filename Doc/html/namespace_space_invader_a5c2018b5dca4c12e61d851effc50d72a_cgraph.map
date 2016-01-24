@@ -1,0 +1,6 @@
+<map id="SpaceInvader::ManageScenar" name="SpaceInvader::ManageScenar">
+<area shape="rect" id="node2" href="$namespace_space_invader.html#a9938cccb2881952d6cbf24f44c4e37e2" title="GotoXY Permet de déplacer le curseur. " alt="" coords="655,23,805,49"/>
+<area shape="rect" id="node3" href="$namespace_space_invader.html#ae02274db8c94a4211488379c16f17374" title="write permet d&#39;écrire du texte sur la console à l&#39;image d&#39;un machine à écrire " alt="" coords="472,23,607,49"/>
+<area shape="rect" id="node4" href="$namespace_space_invader.html#a9b6e7e42736d168be68360648fdf77ef" title="resizeText Fonction qui redimensione le nombre de mots par longueur de caractére " alt="" coords="253,60,419,87"/>
+<area shape="rect" id="node5" href="$namespace_space_invader.html#a8d71bee81fc70d45e9f25fa9d9f93064" title="clearScreen Fonction pour efacer une surface " alt="" coords="248,111,424,137"/>
+</map>

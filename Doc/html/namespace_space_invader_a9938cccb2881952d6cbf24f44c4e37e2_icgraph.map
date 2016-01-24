@@ -1,0 +1,8 @@
+<map id="SpaceInvader::GotoXY" name="SpaceInvader::GotoXY">
+<area shape="rect" id="node2" href="$namespace_space_invader.html#a8d71bee81fc70d45e9f25fa9d9f93064" title="clearScreen Fonction pour efacer une surface " alt="" coords="387,114,563,141"/>
+<area shape="rect" id="node3" href="$namespace_space_invader.html#a5c2018b5dca4c12e61d851effc50d72a" title="ManageScenar gére l&#39;avancer dans l&#39;histoire du joueur. " alt="" coords="611,64,805,90"/>
+<area shape="rect" id="node4" href="$namespace_space_invader.html#a643f4832fba2d915380eb6f3fd1b5d93" title="Run Programe principale du jeux. " alt="" coords="853,64,984,90"/>
+<area shape="rect" id="node6" href="$namespace_space_invader.html#a8127d2d40fed59672a0ba798b6033258" title="MainFont Fonction qui affiche un invader. " alt="" coords="627,114,789,141"/>
+<area shape="rect" id="node7" href="$namespace_space_invader.html#ae02274db8c94a4211488379c16f17374" title="write permet d&#39;écrire du texte sur la console à l&#39;image d&#39;un machine à écrire " alt="" coords="204,64,339,90"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1032,64,1083,90"/>
+</map>

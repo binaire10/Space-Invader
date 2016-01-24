@@ -1,0 +1,6 @@
+<map id="SpaceInvaderML::DisplaySpace" name="SpaceInvaderML::DisplaySpace">
+<area shape="rect" id="node2" href="$namespace_space_invader_m_l.html#a95dc507d17380955df0dc9761a9533fb" title="Fonction effaçant le contenu de l&#39;écran. " alt="" coords="259,5,455,32"/>
+<area shape="rect" id="node3" href="$namespace_space_invader_m_l.html#aa1199871a69324f8ac2bcd73e994e647" title="SpaceInvaderML::Colour" alt="" coords="275,56,438,83"/>
+<area shape="rect" id="node4" href="$namespace_space_invader_m_l.html#a68a03951463f6373b30f3ee76a89c9ae" title="Alias mettant en jaune la couleur du texte du terminal. " alt="" coords="271,107,443,133"/>
+<area shape="rect" id="node5" href="$namespace_space_invader_m_l.html#a3897863db8111616b1c8044e92fb6dab" title="Alias mettant en vert la couleur du texte du terminal. " alt="" coords="272,157,441,184"/>
+</map>

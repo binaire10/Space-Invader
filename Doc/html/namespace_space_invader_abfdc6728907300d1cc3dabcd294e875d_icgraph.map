@@ -1,0 +1,6 @@
+<map id="SpaceInvader::Reset" name="SpaceInvader::Reset">
+<area shape="rect" id="node2" href="$namespace_space_invader.html#a8b5541f5ea5fe5ca9347ed1758db82b6" title="PrintGameLine Fonction pour afficher la grille de jeux. " alt="" coords="195,5,388,32"/>
+<area shape="rect" id="node3" href="$namespace_space_invader.html#a643f4832fba2d915380eb6f3fd1b5d93" title="Run Programe principale du jeux. " alt="" coords="436,56,567,83"/>
+<area shape="rect" id="node5" href="$namespace_space_invader.html#a8127d2d40fed59672a0ba798b6033258" title="MainFont Fonction qui affiche un invader. " alt="" coords="211,107,372,133"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="615,56,665,83"/>
+</map>

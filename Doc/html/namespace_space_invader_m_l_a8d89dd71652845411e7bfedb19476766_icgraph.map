@@ -1,0 +1,6 @@
+<map id="SpaceInvaderML::IsDead" name="SpaceInvaderML::IsDead">
+<area shape="rect" id="node2" href="$namespace_space_invader_m_l.html#a62cf19a3ccb3212dfedf4c468e090f0e" title="Simule le tir d&#39;un belligérant. " alt="" coords="219,5,377,32"/>
+<area shape="rect" id="node5" href="$namespace_space_invader_m_l.html#ad101278b690578b496895b2bf4643d41" title="Simule le jeu du joueur. " alt="" coords="436,56,625,83"/>
+<area shape="rect" id="node3" href="$namespace_space_invader_m_l.html#a5c5ea3828108fcf61607a652f92db4dd" title="Simule le jeu de l&#39;envahisseur. " alt="" coords="425,5,636,32"/>
+<area shape="rect" id="node4" href="$namespace_space_invader_m_l.html#a6c7cce1e49f2836ada372ea9668ff633" title="simule le jeux " alt="" coords="684,31,893,57"/>
+</map>

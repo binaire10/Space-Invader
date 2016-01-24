@@ -1,0 +1,5 @@
+<map id="SpaceInvader_AC::ClearScreen" name="SpaceInvader_AC::ClearScreen">
+<area shape="rect" id="node2" href="$namespace_space_invader___a_c.html#aa826099034beaa73ac73da191b073502" title="Permet d&#39;afficher l&#39;espace de jeu. " alt="" coords="256,5,431,47"/>
+<area shape="rect" id="node3" href="$namespace_space_invader___a_c.html#ad3f2204d91cbaa72468bf69a7278a888" title="Fonction principale du jeu sans option. " alt="" coords="479,13,695,39"/>
+<area shape="rect" id="node4" href="$namespace_space_invader___a_c.html#a19a4587542121d3bc0ccd306d18cc441" title="SpaceInvader_AC::ppal" alt="" coords="743,13,899,39"/>
+</map>

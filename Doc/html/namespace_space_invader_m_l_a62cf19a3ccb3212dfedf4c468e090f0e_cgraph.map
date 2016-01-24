@@ -1,0 +1,4 @@
+<map id="SpaceInvaderML::Shoot" name="SpaceInvaderML::Shoot">
+<area shape="rect" id="node2" href="$namespace_space_invader_m_l.html#a8d89dd71652845411e7bfedb19476766" title="Renvoie vrai si le belligérant meurt. " alt="" coords="231,5,396,32"/>
+<area shape="rect" id="node3" href="$namespace_space_invader___a_c.html#a82e94b15569656393c8eb46af9e41c57" title="Alias vers une ligne vide de l&#39;esapce. " alt="" coords="212,56,415,83"/>
+</map>

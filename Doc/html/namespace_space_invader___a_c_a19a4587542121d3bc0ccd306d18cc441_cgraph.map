@@ -1,0 +1,26 @@
+<map id="SpaceInvader_AC::ppal" name="SpaceInvader_AC::ppal">
+<area shape="rect" id="node2" href="$namespace_space_invader___a_c.html#a58907a319dc5d6da03111651d9c4d0bd" title="Permet d&#39;activer la saisie à la volée. " alt="" coords="242,193,393,234"/>
+<area shape="rect" id="node3" href="$namespace_space_invader___a_c.html#a6b116a99a7b4848ed64a86e09ec35a0d" title="Permet d&#39;afficher le contenu d&#39;un fichier à l&#39;écran. " alt="" coords="225,259,410,285"/>
+<area shape="rect" id="node4" href="$namespace_space_invader___a_c.html#ad3f2204d91cbaa72468bf69a7278a888" title="Fonction principale du jeu sans option. " alt="" coords="209,309,425,336"/>
+<area shape="rect" id="node5" href="$namespace_space_invader___a_c.html#a39248f62c93d5d2e7668a9b40f5f7d40" title="Permet d&#39;initialiser l&#39;espace de jeu et de définir les coordonnées des objets à placer au lancement du j..." alt="" coords="497,5,684,32"/>
+<area shape="rect" id="node7" href="$namespace_space_invader___a_c.html#a8d393b50d7ab89b1e129dc2287a723e0" title="Vide l&#39;espace de jeu, puis insère tous les objets du jeu. " alt="" coords="485,56,697,83"/>
+<area shape="rect" id="node9" href="$namespace_space_invader___a_c.html#aa826099034beaa73ac73da191b073502" title="Permet d&#39;afficher l&#39;espace de jeu. " alt="" coords="503,142,678,183"/>
+<area shape="rect" id="node12" href="$namespace_space_invader___a_c.html#a20abff3c0cffd5a935f257031311c7ca" title="Simule le jeu du joueur. " alt="" coords="493,208,689,235"/>
+<area shape="rect" id="node17" href="$namespace_space_invader___a_c.html#ac5bb75fad01f48a96c6a6cf04a8f5e10" title="ManageInvaders Simule le jeu de l&#39;envahisseur. " alt="" coords="478,259,703,285"/>
+<area shape="rect" id="node18" href="$namespace_space_invader___a_c.html#ac05800d8b244af421fcd63694ccf1daf" title="Simule un déplacement bas en ajoutant une unité de déplacement à toutes les ordonnées des objets en paramèt..." alt="" coords="767,309,962,336"/>
+<area shape="rect" id="node19" href="$namespace_space_invader___a_c.html#a0fc451d9b503c9eb84f732705a6b873a" title="Simule un déplacement haut en ajoutant une unité de déplacement à toutes les ordonnées des objets en param..." alt="" coords="501,360,680,387"/>
+<area shape="rect" id="node20" href="$namespace_space_invader___a_c.html#af21b5671496915dfea80e07e82aff7ce" title="Gère toutes les collisions du jeu. " alt="" coords="473,411,708,437"/>
+<area shape="rect" id="node23" href="$namespace_space_invader___a_c.html#a4c98b5496ea329b693e8f111c3a6e893" title="Supprime les missiles qui sortent de l&#39;espace de jeu. " alt="" coords="482,461,699,488"/>
+<area shape="rect" id="node24" href="$namespace_space_invader___a_c.html#a570774d605e2ce6df7ac089df4a98cb2" title="Supprime les tropilles qui sortent de l&#39;espace de jeu. " alt="" coords="479,512,702,539"/>
+<area shape="rect" id="node25" href="$namespace_space_invader___a_c.html#a403377d3cd4fd7317c820b44e4348148" title="Teste si l&#39;envahisseur ou si le joueur ont gagné. " alt="" coords="504,563,677,589"/>
+<area shape="rect" id="node6" href="$namespace_space_invader___a_c.html#a82e94b15569656393c8eb46af9e41c57" title="Alias vers une ligne vide de l&#39;esapce. " alt="" coords="763,5,966,32"/>
+<area shape="rect" id="node8" href="$namespace_space_invader___a_c.html#a555dcd4e2fadcbc00e36ac1561e53752" title="Permet d&#39;insérer le carcactère passé en second paramètre à toutes les positions souhaitées (1er paramètre) d..." alt="" coords="756,56,973,83"/>
+<area shape="rect" id="node10" href="$namespace_space_invader___a_c.html#ab1b055934b8888b6677deae69037c9bb" title="Fonction effaçant le contenu de l&#39;écran. " alt="" coords="763,157,966,184"/>
+<area shape="rect" id="node11" href="$namespace_space_invader___a_c.html#a70634be72c670e0642ea968cd7a75b60" title="SpaceInvader_AC::Couleur" alt="" coords="777,107,953,133"/>
+<area shape="rect" id="node13" href="$namespace_space_invader___a_c.html#abab49789f3fc8bb9f65117438d100850" title="Simule un déplacement gauche en retranchant une unité de déplacement à toutes les abscisses des objets en..." alt="" coords="773,259,956,285"/>
+<area shape="rect" id="node15" href="$namespace_space_invader___a_c.html#a2ce54a540940dd9461fc860f922987ac" title="Simule un déplacement droit en ajoutant une unité de déplacement à toutes les abscisses des objets en par..." alt="" coords="769,208,961,235"/>
+<area shape="rect" id="node14" href="$namespace_space_invader___a_c.html#a34ef7068fa71ee8d692d0f3ddec8207d" title="Trouve le minimum d&#39;un vecteur de CPosition de la coordonées en X (abscisse). " alt="" coords="1023,259,1183,285"/>
+<area shape="rect" id="node16" href="$namespace_space_invader___a_c.html#af0d1bfcc40793a658ec5ee100829e915" title="Trouve le maximum d&#39;un vecteur de CPosition de la coordonées en X (abscisse). " alt="" coords="1021,208,1185,235"/>
+<area shape="rect" id="node21" href="$namespace_space_invader___a_c.html#a722ec22c3b96b5780b416b0756b8ca83" title="Gère les collisions (multiples) entre les missiles et les tropilles. " alt="" coords="767,447,963,489"/>
+<area shape="rect" id="node22" href="$namespace_space_invader___a_c.html#aee7d14d2a386f48b6d57ffa5a6b3cbf5" title="Gère les collisions entre les objets et les vaisseaux. " alt="" coords="774,382,955,423"/>
+</map>

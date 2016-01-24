@@ -1,0 +1,6 @@
+<map id="SpaceInvaderML::ManageInvader" name="SpaceInvaderML::ManageInvader">
+<area shape="rect" id="node2" href="$namespace_space_invader___a_c.html#a82e94b15569656393c8eb46af9e41c57" title="Alias vers une ligne vide de l&#39;esapce. " alt="" coords="495,22,697,49"/>
+<area shape="rect" id="node3" href="$namespace_space_invader_m_l.html#a615fdda401687b7a554c9b5fc21e6309" title="Descend l&#39;envahisseur d&#39;une ligne dans l&#39;espace. " alt="" coords="264,22,447,49"/>
+<area shape="rect" id="node4" href="$namespace_space_invader_m_l.html#a62cf19a3ccb3212dfedf4c468e090f0e" title="Simule le tir d&#39;un belligérant. " alt="" coords="276,73,435,100"/>
+<area shape="rect" id="node5" href="$namespace_space_invader_m_l.html#a8d89dd71652845411e7bfedb19476766" title="Renvoie vrai si le belligérant meurt. " alt="" coords="513,73,679,100"/>
+</map>

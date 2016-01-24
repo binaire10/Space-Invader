@@ -1,0 +1,7 @@
+<map id="SpaceInvader::MainFont" name="SpaceInvader::MainFont">
+<area shape="rect" id="node2" href="$namespace_space_invader.html#a9938cccb2881952d6cbf24f44c4e37e2" title="GotoXY Permet de déplacer le curseur. " alt="" coords="656,78,807,105"/>
+<area shape="rect" id="node3" href="$namespace_space_invader.html#a09b482c0c10f2a9b5d736a72862f7f03" title="SetColorAndBack Fonction pour modifier la couleur de fond. " alt="" coords="215,27,425,54"/>
+<area shape="rect" id="node4" href="$namespace_space_invader.html#abfdc6728907300d1cc3dabcd294e875d" title="SpaceInvader::Reset" alt="" coords="249,78,391,105"/>
+<area shape="rect" id="node5" href="$namespace_space_invader.html#a8d71bee81fc70d45e9f25fa9d9f93064" title="clearScreen Fonction pour efacer une surface " alt="" coords="232,129,408,155"/>
+<area shape="rect" id="node6" href="$namespace_space_invader.html#ae02274db8c94a4211488379c16f17374" title="write permet d&#39;écrire du texte sur la console à l&#39;image d&#39;un machine à écrire " alt="" coords="473,129,608,155"/>
+</map>

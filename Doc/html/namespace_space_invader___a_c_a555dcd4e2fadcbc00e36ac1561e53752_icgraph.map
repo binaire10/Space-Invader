@@ -1,0 +1,5 @@
+<map id="SpaceInvader_AC::PutCVPosition" name="SpaceInvader_AC::PutCVPosition">
+<area shape="rect" id="node2" href="$namespace_space_invader___a_c.html#a8d393b50d7ab89b1e129dc2287a723e0" title="Vide l&#39;espace de jeu, puis insère tous les objets du jeu. " alt="" coords="271,5,483,32"/>
+<area shape="rect" id="node3" href="$namespace_space_invader___a_c.html#ad3f2204d91cbaa72468bf69a7278a888" title="Fonction principale du jeu sans option. " alt="" coords="531,5,747,32"/>
+<area shape="rect" id="node4" href="$namespace_space_invader___a_c.html#a19a4587542121d3bc0ccd306d18cc441" title="SpaceInvader_AC::ppal" alt="" coords="795,5,951,32"/>
+</map>

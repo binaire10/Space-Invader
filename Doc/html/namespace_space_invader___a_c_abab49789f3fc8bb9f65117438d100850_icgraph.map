@@ -1,0 +1,6 @@
+<map id="SpaceInvader_AC::MoveLeft" name="SpaceInvader_AC::MoveLeft">
+<area shape="rect" id="node2" href="$namespace_space_invader___a_c.html#a20abff3c0cffd5a935f257031311c7ca" title="Simule le jeu du joueur. " alt="" coords="251,5,447,32"/>
+<area shape="rect" id="node5" href="$namespace_space_invader___a_c.html#ac5bb75fad01f48a96c6a6cf04a8f5e10" title="ManageInvaders Simule le jeu de l&#39;envahisseur. " alt="" coords="236,56,461,83"/>
+<area shape="rect" id="node3" href="$namespace_space_invader___a_c.html#ad3f2204d91cbaa72468bf69a7278a888" title="Fonction principale du jeu sans option. " alt="" coords="509,31,725,57"/>
+<area shape="rect" id="node4" href="$namespace_space_invader___a_c.html#a19a4587542121d3bc0ccd306d18cc441" title="SpaceInvader_AC::ppal" alt="" coords="773,31,929,57"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="SpaceInvader::clearScreen" name="SpaceInvader::clearScreen">
+<area shape="rect" id="node2" href="$namespace_space_invader.html#a5c2018b5dca4c12e61d851effc50d72a" title="ManageScenar gére l&#39;avancer dans l&#39;histoire du joueur. " alt="" coords="229,5,424,32"/>
+<area shape="rect" id="node5" href="$namespace_space_invader.html#a8127d2d40fed59672a0ba798b6033258" title="MainFont Fonction qui affiche un invader. " alt="" coords="246,56,407,83"/>
+<area shape="rect" id="node3" href="$namespace_space_invader.html#a643f4832fba2d915380eb6f3fd1b5d93" title="Run Programe principale du jeux. " alt="" coords="472,31,603,57"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="651,31,701,57"/>
+</map>

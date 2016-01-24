@@ -1,0 +1,23 @@
+<map id="SpaceInvader::Run" name="SpaceInvader::Run">
+<area shape="rect" id="node2" href="$namespace_space_invader.html#a92106425b5d6a90c39234d1c4f90d8bc" title="SpaceInvader::set_input_mode" alt="" coords="196,5,395,32"/>
+<area shape="rect" id="node3" href="$namespace_space_invader.html#a8127d2d40fed59672a0ba798b6033258" title="MainFont Fonction qui affiche un invader. " alt="" coords="215,309,376,336"/>
+<area shape="rect" id="node4" href="$namespace_space_invader.html#a9938cccb2881952d6cbf24f44c4e37e2" title="GotoXY Permet de déplacer le curseur. " alt="" coords="896,171,1047,197"/>
+<area shape="rect" id="node5" href="$namespace_space_invader.html#a09b482c0c10f2a9b5d736a72862f7f03" title="SetColorAndBack Fonction pour modifier la couleur de fond. " alt="" coords="455,360,665,387"/>
+<area shape="rect" id="node6" href="$namespace_space_invader.html#abfdc6728907300d1cc3dabcd294e875d" title="SpaceInvader::Reset" alt="" coords="489,411,631,437"/>
+<area shape="rect" id="node9" href="$namespace_space_invader.html#a27a8d6fbc7529e2fdc229bd016959584" title="LoseTest test si le joueur à perdue. " alt="" coords="215,512,375,539"/>
+<area shape="rect" id="node10" href="$namespace_space_invader.html#a24691006920effd4312d164d43ceb748" title="initSpace On initialise l&#39;espace de jeux, on positione les joueur " alt="" coords="215,563,376,589"/>
+<area shape="rect" id="node11" href="$namespace_space_invader.html#a210ad978b4f444db778b7832a7f2c32b" title="CleanScreen Efface en dure l&#39;écrant. " alt="" coords="205,613,386,640"/>
+<area shape="rect" id="node12" href="$namespace_space_invader.html#a5c2018b5dca4c12e61d851effc50d72a" title="ManageScenar gére l&#39;avancer dans l&#39;histoire du joueur. " alt="" coords="198,208,393,235"/>
+<area shape="rect" id="node13" href="$namespace_space_invader.html#a9b6e7e42736d168be68360648fdf77ef" title="resizeText Fonction qui redimensione le nombre de mots par longueur de caractére " alt="" coords="477,208,643,235"/>
+<area shape="rect" id="node14" href="$namespace_space_invader.html#a45dfa0e56582fac86cd4df6fadd92df9" title="WinTest Test si le joueur à gagner. " alt="" coords="218,664,373,691"/>
+<area shape="rect" id="node15" href="$namespace_space_invader.html#a99ec6f5c32e5681b117ad911ad582e1f" title="ManageMissileAndTorpedo Controle la physique de déplacement d&#39;objet telle que des missile..." alt="" coords="198,781,393,822"/>
+<area shape="rect" id="node17" href="$namespace_space_invader.html#ae1e3e4ec81eb820c73573e730293c12a" title="ManageBonus Fait apparaitre un bonus. " alt="" coords="200,847,391,873"/>
+<area shape="rect" id="node18" href="$namespace_space_invader.html#a608985cad8a7c24e3803f2074f58510a" title="ManageInvaderShoot Fonction qui fait tirée l&#39;invader. " alt="" coords="199,715,392,757"/>
+<area shape="rect" id="node19" href="$namespace_space_invader.html#ae84d0e6e5743eccb5f0f5ccbc38ae2c6" title="ManageMe Controle Le joueur. " alt="" coords="210,897,381,924"/>
+<area shape="rect" id="node20" href="$namespace_space_invader.html#a8b5541f5ea5fe5ca9347ed1758db82b6" title="PrintGameLine Fonction pour afficher la grille de jeux. " alt="" coords="199,461,392,488"/>
+<area shape="rect" id="node22" href="$namespace_space_invader.html#a68d817054a4a09ec974b4b0f57e3fa15" title="ManageInvaderMove Déplace l&#39;invader. " alt="" coords="184,948,407,975"/>
+<area shape="rect" id="node7" href="$namespace_space_invader.html#a8d71bee81fc70d45e9f25fa9d9f93064" title="clearScreen Fonction pour efacer une surface " alt="" coords="472,259,648,285"/>
+<area shape="rect" id="node8" href="$namespace_space_invader.html#ae02274db8c94a4211488379c16f17374" title="write permet d&#39;écrire du texte sur la console à l&#39;image d&#39;un machine à écrire " alt="" coords="713,171,848,197"/>
+<area shape="rect" id="node16" href="$namespace_space_invader.html#a280b842ed848a1f0ef9f530292ff3633" title="MoveTo déplace les objets du From ver le To. " alt="" coords="485,756,635,783"/>
+<area shape="rect" id="node21" href="$namespace_space_invader.html#ab237895ff3f5ecc002c6c7ba1196f91b" title="SetColor fonction pour modifier la couleur du texte sur fond noir. " alt="" coords="481,461,639,488"/>
+</map>

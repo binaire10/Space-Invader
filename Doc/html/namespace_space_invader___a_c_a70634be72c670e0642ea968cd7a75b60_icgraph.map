@@ -1,0 +1,5 @@
+<map id="SpaceInvader_AC::Couleur" name="SpaceInvader_AC::Couleur">
+<area shape="rect" id="node2" href="$namespace_space_invader___a_c.html#aa826099034beaa73ac73da191b073502" title="Permet d&#39;afficher l&#39;espace de jeu. " alt="" coords="229,5,404,47"/>
+<area shape="rect" id="node3" href="$namespace_space_invader___a_c.html#ad3f2204d91cbaa72468bf69a7278a888" title="Fonction principale du jeu sans option. " alt="" coords="452,13,668,39"/>
+<area shape="rect" id="node4" href="$namespace_space_invader___a_c.html#a19a4587542121d3bc0ccd306d18cc441" title="SpaceInvader_AC::ppal" alt="" coords="716,13,872,39"/>
+</map>

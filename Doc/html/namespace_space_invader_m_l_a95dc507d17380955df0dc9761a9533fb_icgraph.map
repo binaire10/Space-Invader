@@ -1,0 +1,4 @@
+<map id="SpaceInvaderML::ClearScreen" name="SpaceInvaderML::ClearScreen">
+<area shape="rect" id="node2" href="$namespace_space_invader_m_l.html#abb963a9dcc9b4f5e8a08a79a783d097a" title="Permet d&#39;afficher l&#39;espace de jeu. " alt="" coords="249,5,455,32"/>
+<area shape="rect" id="node3" href="$namespace_space_invader_m_l.html#a6c7cce1e49f2836ada372ea9668ff633" title="simule le jeux " alt="" coords="503,5,712,32"/>
+</map>

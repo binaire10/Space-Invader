@@ -1,0 +1,6 @@
+<map id="SpaceInvader_AC::ManageMe" name="SpaceInvader_AC::ManageMe">
+<area shape="rect" id="node2" href="$namespace_space_invader___a_c.html#abab49789f3fc8bb9f65117438d100850" title="Simule un déplacement gauche en retranchant une unité de déplacement à toutes les abscisses des objets en..." alt="" coords="254,5,437,32"/>
+<area shape="rect" id="node4" href="$namespace_space_invader___a_c.html#a2ce54a540940dd9461fc860f922987ac" title="Simule un déplacement droit en ajoutant une unité de déplacement à toutes les abscisses des objets en par..." alt="" coords="249,56,441,83"/>
+<area shape="rect" id="node3" href="$namespace_space_invader___a_c.html#a34ef7068fa71ee8d692d0f3ddec8207d" title="Trouve le minimum d&#39;un vecteur de CPosition de la coordonées en X (abscisse). " alt="" coords="491,5,651,32"/>
+<area shape="rect" id="node5" href="$namespace_space_invader___a_c.html#af0d1bfcc40793a658ec5ee100829e915" title="Trouve le maximum d&#39;un vecteur de CPosition de la coordonées en X (abscisse). " alt="" coords="489,56,653,83"/>
+</map>

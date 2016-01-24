@@ -1,0 +1,4 @@
+<map id="SpaceInvaderML::Remove" name="SpaceInvaderML::Remove">
+<area shape="rect" id="node2" href="$namespace_space_invader_m_l.html#a002dc98d1a3a7ae2eb28fc4b58d5dd51" title="recalcule l&#39;espace (déplacement des torpilles et des missiles) à chaque fois qu&#39;un belligérant a joué. ..." alt="" coords="224,5,415,47"/>
+<area shape="rect" id="node3" href="$namespace_space_invader_m_l.html#a6c7cce1e49f2836ada372ea9668ff633" title="simule le jeux " alt="" coords="463,13,672,39"/>
+</map>
