@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 #include "Nos_fichiers/SpaceInvader.h"
+#include <QtCore>
 using namespace std;
 using namespace SpaceInvader;
 

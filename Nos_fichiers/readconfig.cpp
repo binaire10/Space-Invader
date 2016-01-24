@@ -57,27 +57,27 @@ namespace SpaceInvader
         {
             // Position dans la ligne
             unsigned offset(0);
-            // Clée dans la map
+            // Clé dans la map
             string  Key;
             // Valeur de la clé
             string  Value;
-            // si la ligne est vide on lance une exception (l'exception est attraper par l'extracteur)
+            // si la ligne est vide on lance une exception (l'exception est attrapée par l'extracteur)
             if(Line.size() == 0)
                 throw("can't read File : "+File);
-            // on saute jusqu'au premier mots
+            // on saute jusqu'au premier mot
             while (offset<Line.size() && Line[offset]==' ') ++offset;
-            // on extrait le mots
+            // on extrait le mot
             while (offset<Line.size() && Line[offset]!=' ') Key.push_back(Line[offset++]);
             // on saute jusqu'au :
             while (offset<Line.size() && Line[offset]==' ') ++offset;
-            // si il n'est pas trouver on quite
+            // si il n'est pas trouvé on quitte
             if(offset>=Line.size() || Line[offset++] != ':')
                 continue;
-            // on saute jusqu'au contenue des variable
+            // on saute jusqu'au contenu des variables
             while (offset<Line.size() && Line[offset]==' ') ++offset;
-            // on  extrait le 2éme mots
+            // on  extrait le 2ème mot
             while (offset<Line.size()) Value.push_back(Line[offset++]);
-            // avectation de la valeur;
+            // afectation de la valeur;
             TabValue[File][Key] = Value;
         }
         // on retourne la table courante
@@ -86,20 +86,20 @@ namespace SpaceInvader
 
     char GetValueChar(const string &Value, const string &File, const char &defaultValue)
     {
-        // on essaye de récupére la valeur attacher à Value
+        // on essaye de récupérer la valeur attachée à Value
         try
         {
-            // récupére les constante stocker dans File
+            // On récupère les constante stocker dans File
             const std::map<std::string, std::string> &ArrayVal = LoadFile(File);
-            // récupére la valeur de la clée
+            // On récupère la valeur de la clée
             std::map<std::string, std::string>::const_iterator val = ArrayVal.find(Value);
             // si elle n'existe pas ou est invalide on renvoie la valeur par défaut
             if(val == ArrayVal.end() || val->second.size()==0)
                 return defaultValue;
-            // sinon on retourne la premier lettre stocker
+            // sinon on retourne la première lettre stockée
             return val->second[0];
         }
-        // si le fichier est introuvable ou n'importe quel erreur on renvoie la valeur par défaut
+        // si le fichier est introuvable ou n'importe quelle erreur on renvoie la valeur par défaut
         catch(...)
         {
             return defaultValue;
@@ -108,20 +108,20 @@ namespace SpaceInvader
 
     string GetValueStr(const string &Value, const string &File, const string &defaultValue)
     {
-        // on essaye de récupére la valeur attacher à Value
+        // on essaye de récupérer la valeur attachée à Value
         try
         {
             //  on charge le fichier en mémoire et on le stock
             const std::map<std::string, std::string> &ArrayVal = LoadFile(File);
-            // on récupére la valueur attacher à la clée
+            // on récupére la valeur attachée à la clée
             std::map<std::string, std::string>::const_iterator val = ArrayVal.find(Value);
             // si elle n'existe pas
             if(val == ArrayVal.end() || val->second.size()==0)
                 return defaultValue;
-            //sinon on renvois la veuleur attacher à la variable
+            //sinon on renvoie la valeur attachée à la variable
             return val->second;
         }
-        // si le fichier est introuvable ou n'importe quel erreur on renvoie la valeur par défaut
+        // si le fichier est introuvable ou n'importe quelle erreur on renvoie la valeur par défaut
         catch(...)
         {
             return defaultValue;
@@ -129,7 +129,7 @@ namespace SpaceInvader
 
     }
 
-    // fonction qui permet de verifier si le nombre est un non signer
+    // fonction qui permet de verifier si le nombre est un non signé
     bool isUnsignedValue(const string &ValTest)
     {
         for(const char &Value : ValTest)
@@ -162,7 +162,7 @@ namespace SpaceInvader
 
     unsigned GetValueInt(const string &Value, const string &File, const unsigned &defaultValue)
     {
-        // on essaye de récupére la valeur attacher à Value
+        // on essaye de récupérer la valeur attacher à Value
         try
         {
             //  on charge le fichier en mémoire et on le stock
@@ -172,10 +172,10 @@ namespace SpaceInvader
             // si elle n'existe pas
             if(val == ArrayVal.end() || val->second.size()==0)
                 return defaultValue;
-            // si c'est une valeur non signé on l'extrait
+            // si c'est une valeur non signée on l'extrait
             else if(isUnsignedValue(val->second))
                 return atoi(val->second.data());
-            // sinon on essait de traduire le supposer alias contenue
+            // sinon on essait de traduire le supposé alias contenu
             return AliasToValueInt(val->second);
         }
         // si le fichier n'existe pas ou l'alias n'est pas traduisible on retourne la valeur par défaut

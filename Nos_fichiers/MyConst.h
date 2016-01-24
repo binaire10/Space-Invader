@@ -66,7 +66,7 @@ namespace SpaceInvader
     const char KLeft                = GetValueChar("KLeft", "config.yaml", 'w');  // Déplacement vers la gauche
 
     /*!
-     * \brief Alias vers la touche servant à  lancer une torpille.
+     * \brief Alias vers la touche servant à lancer une torpille.
      */
     const char KShoot               = GetValueChar("KShoot", "config.yaml", ' ');  // Lancer de torpille
 
@@ -155,8 +155,22 @@ namespace SpaceInvader
     /*!
      * \var KBonus
      * \brief KBonus
+     * Représentation des bonus
      */
-    const char KBonus = GetValueChar("KBonus","config.yaml", '*')!=KEmpty ? GetValueChar("KBonus","config.yaml", '*') : '*';
+    const char KBonus           = GetValueChar("KBonus","config.yaml", '*')!=KEmpty ? GetValueChar("KBonus","config.yaml", '*') : '*';
+
+    /*!
+     * \brief KRatio
+     * Ratio d'apparition de bonus
+     */
+    const unsigned KRatio       = GetValueInt("KRatio","config.yaml", 60);
+
+    /*!
+     * \var KMur
+     * \brief KMur
+     * Représentation des Mur
+     */
+    const char KMur             = GetValueChar("KMur","config.yaml", '=')!=KEmpty ? GetValueChar("KMur","config.yaml", '=') : '=';
 
     /*!
      * \var KIntroSound

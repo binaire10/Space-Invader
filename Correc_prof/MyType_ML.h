@@ -6,7 +6,7 @@ namespace SpaceInvaderML
 {
 /*!
   * \typedef CVString
-  * \brief   Alias vers le type de l'Ã©cran (l'espace, la matrice).
+  * \brief   Alias vers le type de l'écran (l'espace, la matrice).
   */
  typedef std::vector <std::string> CVString;
  /**

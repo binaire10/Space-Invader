@@ -24,6 +24,11 @@ KSizeLine   		 : 10
 KSizeSpace  		 : 10
 KEmpty               : 
 
+// Constantes liées au fonctionalité
+KBonus              : *
+KRatio              : 60
+KMur                : =
+
 // Adresse des ressources audio en ligne ou sur le PC (pour un fichier present du le PC le format est ( files:///ADRESSE_VERS_LE_FICHIERS )
 KIntroSound          : http://216.227.134.162/ost/space-invaders-gbc-gb-/xanousrrne/01-title-screen.mp3
 KHistoSound          : http://cdn.frustra.org/sounds/sound/vo/core01/space21.mp3

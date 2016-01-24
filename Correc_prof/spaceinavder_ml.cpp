@@ -1,5 +1,5 @@
 /**
- * \file      SpacInvadersML.cpp
+ * \file      spaceinavder_ml.cpp
  *
  * \author    Marc Laporte
  *
@@ -7,7 +7,7 @@
  *
  * \note      Last modification 19/11/2015
  *
- * \brief     Essais pour l'implÃ©mentation de space invaders
+ * \brief     Essais pour l'implémentation de space invaders
  *
  */
 
@@ -332,7 +332,7 @@ namespace SpaceInvaderML
         }
         if (IWin)
         {
-            cout << "J'ai gagnÃ©" << endl;
+            cout << "J'ai gagné" << endl;
         }
         else
         {

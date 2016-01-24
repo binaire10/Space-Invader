@@ -4,7 +4,7 @@
   * \file MyConst_AC.h
   * \author Alain Casali Marc Laporte
   * \date 7 janvier 2016
-  * \brief Fichier dÃ©crivant l'ensemble des constantes utilisÃ©es dans le jeu
+  * \brief Fichier décrivant l'ensemble des constantes utilisées dans le jeu
   * \version 1.0
   * \bug Aucun connu
   */
@@ -15,7 +15,7 @@ namespace SpaceInvader_AC
 {
     //Constantes de couleur
     /*!
-     * \brief Alias remetant la couleur du texte du terminal Ã  sa valeur par dÃ©faut.
+     * \brief Alias remetant la couleur du texte du terminal à  sa valeur par défaut.
      */
     const std::string KReset   ("0");
 
@@ -55,98 +55,98 @@ namespace SpaceInvader_AC
 
     // Constantes pour les touches
     /*!
-     * \brief Alias vers la touche servant Ã  se dÃ©placer Ã  droite.
+     * \brief Alias vers la touche servant à  se déplacer à  droite.
      */
-    const char KRight               = 'x';  // dÃ©placement vers la droite
+    const char KRight               = 'x';  // déplacement vers la droite
 
     /*!
-     * \brief Alias vers la touche servant Ã  se dÃ©placer Ã  gauche.
+     * \brief Alias vers la touche servant à  se déplacer à  gauche.
      */
-    const char KLeft                = 'w';  // DÃ©placement vers la gauche
+    const char KLeft                = 'w';  // Déplacement vers la gauche
 
     /*!
-     * \brief Alias vers la touche servant Ã  lancer une torpille.
+     * \brief Alias vers la touche servant à  lancer une torpille.
      */
     const char KShoot               = ' ';  // Lancer de torpille
 
-    //  Constantes liÃ©es Ã  l'envahisseur
+    //  Constantes liées à  l'envahisseur
     /*!
      * \brief Couleur de l'envahisseur.
      */
     const std::string KInvadersColor (KJaune);  // Couleur de l'envahisseur
 
     /*!
-     * \brief CaractÃ¨rere formant l'envahisseur.
+     * \brief Caractèrere formant l'envahisseur.
      */
-    const char KInsideInvader       = 'W';  // caractÃ¨rere formant l'envahisseur
+    const char KInsideInvader       = 'W';  // caractèrere formant l'envahisseur
 
     /*!
-     * \brief CaractÃ¨rere formant le missile.
+     * \brief Caractèrere formant le missile.
      */
     const char KMissile             = 'T';  // missile
 
     /*!
-     * \brief Nombre de caractÃ¨res qui forment l'envahisseur.
+     * \brief Nombre de caractères qui forment l'envahisseur.
      */
-    const unsigned KInvadersSize    =  5;   // nombre de caractÃ¨res qui forment l'envahisseur
+    const unsigned KInvadersSize    =  5;   // nombre de caractères qui forment l'envahisseur
 
     /*!
-     * \brief Nombre de fois oÃ¹ l'envahisseur tire un missile par rapport Ã  son dÃ©placement.
+     * \brief Nombre de fois où l'envahisseur tire un missile par rapport à  son déplacement.
      */
-    const unsigned KMissileRatio = 2; // nombre de fois oÃ¹ l'envahisseur tire un missile par rapport Ã  son dÃ©placement
+    const unsigned KMissileRatio = 2; // nombre de fois où l'envahisseur tire un missile par rapport à  son déplacement
 
-    // Constantes liÃ©es au joueur
+    // Constantes liées au joueur
     /*!
-     * \brief Couleur liÃ©e Ã  mes objets (vaisseaux et tropilles).
+     * \brief Couleur liée à  mes objets (vaisseaux et tropilles).
      */
     const std::string KMyColor (KVert); // Ma couleur
 
     /*!
-     * \brief CaractÃ¨rere formant mon vaisseau.
+     * \brief Caractèrere formant mon vaisseau.
      */
-    const char KInsideMe            = 'A'; // caractÃ¨rere formant mon vaisseau
+    const char KInsideMe            = 'A'; // caractèrere formant mon vaisseau
 
     /*!
-     * \brief CaractÃ¨rere formant ma torpille.
+     * \brief Caractèrere formant ma torpille.
      */
-    const char KTorpedo             = '|'; // caractÃ¨rere formant ma torpille
+    const char KTorpedo             = '|'; // caractèrere formant ma torpille
 
     /*!
-     * \brief Nombre de caractÃ¨res qui forment mon vaisseau.
+     * \brief Nombre de caractères qui forment mon vaisseau.
      */
-    const unsigned KMySize          = 4; //  nombre de caractÃ¨res qui forment mon vaisseau
+    const unsigned KMySize          = 4; //  nombre de caractères qui forment mon vaisseau
 
 
     /*!
-     * \brief Nombre de fois oÃ¹ c'est le tour du joueur pour un tour de l'envahisseur.
+     * \brief Nombre de fois où c'est le tour du joueur pour un tour de l'envahisseur.
      */
-    const unsigned KRatioMeInvaders = 4;    // Nombre de fois oÃ¹ c'est le tour du joueur pour un tour de l'envahisseur
+    const unsigned KRatioMeInvaders = 4;    // Nombre de fois où c'est le tour du joueur pour un tour de l'envahisseur
 
 
-    // Constantes liÃ©es Ã  l'eapace (l'Ã©cran)
+    // Constantes liées à  l'eapace (l'écran)
     /*!
-     * \brief Alias vers une case vide Ã  l'Ã©cran.
+     * \brief Alias vers une case vide à  l'écran.
      */
-    const char KEmpty               = ' ';  // case vide de l'Ã©cran
+    const char KEmpty               = ' ';  // case vide de l'écran
     /*!
-     * \brief Nombre de lignes de l'Ã©cran (de l'espace).
+     * \brief Nombre de lignes de l'écran (de l'espace).
      */
-    const unsigned KSizeLine   = 10;   // Nombre de lignes de l'Ã©cran (de l'espace)
+    const unsigned KSizeLine   = 10;   // Nombre de lignes de l'écran (de l'espace)
 
     /*!
-     * \brief Nombre de colonnes de l'Ã©cran (de l'espace).
+     * \brief Nombre de colonnes de l'écran (de l'espace).
      */
-    const unsigned KSizeSpace  = 10;   // Nombre de colonnes de l'Ã©cran (de l'espace)
+    const unsigned KSizeSpace  = 10;   // Nombre de colonnes de l'écran (de l'espace)
 
     /*!
-     * \brief NumÃ©ro de colonne oÃ¹ commence l'envahisseur.
+     * \brief Numéro de colonne où commence l'envahisseur.
      */
-    const unsigned KBegInvader = 0;    // NumÃ©ro de colonne oÃ¹ commence l'envahisseur
+    const unsigned KBegInvader = 0;    // Numéro de colonne où commence l'envahisseur
 
     /*!
-     * \brief NumÃ©ro de colonne oÃ¹ commence le joueur.
+     * \brief Numéro de colonne où commence le joueur.
      */
-    const unsigned KBegMe      = KSizeLine / 2;  // NumÃ©ro de colonne oÃ¹ commence le joueur
+    const unsigned KBegMe      = KSizeLine / 2;  // Numéro de colonne où commence le joueur
 
     /*!
      * \brief Alias vers une ligne vide de l'esapce.

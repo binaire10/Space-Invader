@@ -5,21 +5,21 @@ namespace SpaceInvader
 {
     /**
      * @brief GetValueChar
-     * Fonction qui permet de récupérer un charactére à partire d'un fichier yaml
+     * Fonction qui permet de récupérer un charactère à partir d'un fichier yaml
      * @param Value
      * Nom de La variable contenant la valeur à extraire
      * @param File
-     * Nom du ficher yaml contenant les imformation suposer
+     * Nom du ficher yaml contenant les imformations suposées
      * @param defaultValue
      * Valeur par-défaut en cas d'échec de lecture
      * @return
-     * valeur contenue dans la variable
+     * valeur contenu dans la variable
      */
     char GetValueChar(const std::string &Value, const std::string &File, const char &defaultValue);
 
     /**
      * @brief GetValueStr
-     * Fonction qui récupere le contenue d'une variable dans un fichier yaml
+     * Fonction qui récupère le contenue d'une variable dans un fichier yaml
      * @param Value
      * Nom de la variable
      * @param File
@@ -33,7 +33,7 @@ namespace SpaceInvader
 
     /**
      * @brief GetValueInt
-     * Fonction qui permet de recuperé une valeur numérique non signé à partir d'un fichier yaml
+     * Fonction qui permet de recuperer une valeur numérique non signée à partir d'un fichier yaml
      * @param Value
      * nom de la variable
      * @param File
@@ -45,11 +45,11 @@ namespace SpaceInvader
 
     /**
      * @brief LoadFile
-     * Fonction de lecture partiel de fichier yaml
+     * Fonction de lecture partielle de fichier yaml
      * @param File
      * Fichier au format yaml à lire
      * @param reload
-     * Les donnée déjàt en mémoire seron rechargé si vrai
+     * Les données déjà en mémoire seront rechargées si vrai
      * @return
      * Renvoie les donnés de configuration
      */

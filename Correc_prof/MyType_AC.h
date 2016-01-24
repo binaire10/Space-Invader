@@ -4,7 +4,7 @@
   * \file MyType_AC.h
   * \author Alain Casali Marc Laporte
   * \date 7 janvier 2016
-  * \brief Fichier dÃ©crivant l'ensemble des alias vers les types utilisÃ©s dans le jeu
+  * \brief Fichier décrivant l'ensemble des alias vers les types utilisés dans le jeu
   * \version 1.0
   * \bug Aucun connu
   */
@@ -19,14 +19,14 @@ namespace SpaceInvader_AC
 {
     /*!
      * \typedef CVString
-     * \brief   Alias vers le type de l'Ã©cran (l'espace, la matrice).
+     * \brief   Alias vers le type de l'écran (l'espace, la matrice).
      */
-    typedef std::vector <std::string> CVString;    // c'est le type de l'Ã©cran (l'espace, la matrice)
+    typedef std::vector <std::string> CVString;    // c'est le type de l'écran (l'espace, la matrice)
 
 
     /*!
      * \typedef CPosition
-     * \brief Alias vers une coordonnÃ©e de la matrice. Le premier Ã©lÃ©ment de la paire dÃ©signe une ordonnÃ©e (axe Y),
+     * \brief Alias vers une coordonnée de la matrice. Le premier élément de la paire désigne une ordonnée (axe Y),
      *          le second une abscisse (axe X).
      */
     typedef std::pair <unsigned, unsigned> CPosition; //une coordonnee de la matrice

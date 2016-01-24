@@ -3,47 +3,47 @@
 namespace SpaceInvaderML
 {
 /*!
- * \brief Alias caractÃ¨re de fond de l'espace.
+ * \brief Alias caractère de fond de l'espace.
  */
     const char KEmpty               = ' ';
     /*!
-     * \brief Alias caractÃ¨re de remplissage d'un envahisseur.
+     * \brief Alias caractère de remplissage d'un envahisseur.
      */
     const char KInsideInvader       = 'W';
     /*!
-     * \brief Alias caractÃ¨re de remplissage d'un joueur.
+     * \brief Alias caractère de remplissage d'un joueur.
      */
     const char KInsideMe            = 'A';
     /*!
-     * \brief Alias caractÃ¨re correspondant Ã  une torpille.
+     * \brief Alias caractère correspondant à  une torpille.
      */
     const char KTorpedo             = '|';  // For me
     /*!
-     * \brief Alias caractÃ¨re correspondant Ã  un missile.
+     * \brief Alias caractère correspondant à  un missile.
      */
     const char KMissile             = 'T';  // For Invaders
 
-    // caractÃ¨res correspondants aux saisies
+    // caractères correspondants aux saisies
     /*!
-     * \brief Alias du caractÃ¨re pour aller Ã  droite.
+     * \brief Alias du caractère pour aller à  droite.
      */
     const char KRight               = '6';
     /*!
-     * \brief Alias du carctÃ¨re pour aller Ã  gauche.
+     * \brief Alias du carctère pour aller à  gauche.
      */
     const char KLeft                = '4';
     /*!
-     * \brief Alias du caractÃ¨re pour tirer.
+     * \brief Alias du caractère pour tirer.
      */
     const char KShoot               = '5';
 
     // diverses tailles
     /*!
-     * \brief Alias taille (en nombre de caractÃ¨res) d'un envahisseur.
+     * \brief Alias taille (en nombre de caractères) d'un envahisseur.
      */
     const Size_t KInvadersSize      = 4;
     /*!
-     * \brief Alias dÃ©placement du milieu d'un envahisseur.
+     * \brief Alias déplacement du milieu d'un envahisseur.
      */
     const Size_t KInvadersMiddle    = KInvadersSize / 2;
     /*!
@@ -51,7 +51,7 @@ namespace SpaceInvaderML
      */
     const Size_t KMySize            = 1;
     /*!
-     * \brief Alias dÃ©placement du milieu d'un joueur.
+     * \brief Alias déplacement du milieu d'un joueur.
      */
     const Size_t KMyMiddle          = KMySize / 2;
     /*!
@@ -92,7 +92,7 @@ namespace SpaceInvaderML
 
     //Constantes de couleur
     /*!
-     * \brief Alias remetant la couleur du texte du terminal Ã  sa valeur par dÃ©faut.
+     * \brief Alias remetant la couleur du texte du terminal à  sa valeur par défaut.
      */
     const std::string KReset   ("0");
 

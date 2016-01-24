@@ -156,7 +156,7 @@ namespace SpaceInvader_AC
     void ManageMe (const CVString & Space, CAObject &Obj)
     {
         char Move;
-        //fonction en C qui permet de lire un caractÃ¨re. cin ne fonctionnant pas dans cette configuration
+        //fonction en C qui permet de lire un caractère. cin ne fonctionnant pas dans cette configuration
         //cin >> Move;
         read (STDIN_FILENO, &Move, 1);
         switch (Move)
@@ -224,10 +224,10 @@ namespace SpaceInvader_AC
 
     void CollisionBetweenMissilesAndTorpedos (CVPosition & Missiles, CVPosition & Torpedos)
     {
-        //la boucle est un peu bizare, mais elle permet de gÃ©rer
-        //deux colisions en mÃªme temps entre deux missiles et torpilles
+        //la boucle est un peu bizare, mais elle permet de gérer
+        //deux colisions en même temps entre deux missiles et torpilles
         //sur deux case differentes
-        //tout Ã§a Ã  cause du .erase () qui supprime la case courante
+        //tout ça à  cause du .erase () qui supprime la case courante
         //=> on ne doit pas incrementer l'indice de boucle dans ce cas
 
         for (unsigned i (0); i < Missiles.size (); )
