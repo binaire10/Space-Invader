@@ -2,9 +2,42 @@
 #include <string>
 #include <map>
 #include <fstream>
-#include "MyConst.h"
 
 using namespace std;
+/*!
+ * \brief Alias mettant en noir la couleur du texte du terminal.
+ */
+const unsigned KNoir    = 0;
+/*!
+ * \brief Alias mettant en rouge la couleur du texte du terminal.
+ */
+const unsigned KRouge   = 1;
+
+/*!
+ * \brief Alias mettant en vert la couleur du texte du terminal.
+
+ */
+const unsigned KVert    = 2;
+/*!
+ * \brief Alias mettant en jaune la couleur du texte du terminal.
+ */
+const unsigned KJaune   = 3;
+
+/*!
+ * \brief Alias mettant en bleu la couleur du texte du terminal.
+ */
+const unsigned KBleu    = 4;
+
+/*!
+ * \brief Alias mettant en mangenta la couleur du texte du terminal.
+ */
+const unsigned KMAgenta = 5;
+
+/*!
+ * \brief Alias mettant en cyan la couleur du texte du terminal.
+ */
+const unsigned KCyan    = 6;
+
 namespace SpaceInvader
 {
     const map<string, string> &LoadFile(const string &File, bool reload)
@@ -24,9 +57,9 @@ namespace SpaceInvader
         {
             // Position dans la ligne
             unsigned offset(0);
-            // ClÃ©e dans la map
+            // Clée dans la map
             string  Key;
-            // Valeur de la clÃ©
+            // Valeur de la clé
             string  Value;
             // si la ligne est vide on lance une exception (l'exception est attraper par l'extracteur)
             if(Line.size() == 0)
@@ -42,7 +75,7 @@ namespace SpaceInvader
                 continue;
             // on saute jusqu'au contenue des variable
             while (offset<Line.size() && Line[offset]==' ') ++offset;
-            // on  extrait le 2Ã©me mots
+            // on  extrait le 2éme mots
             while (offset<Line.size()) Value.push_back(Line[offset++]);
             // avectation de la valeur;
             TabValue[File][Key] = Value;
@@ -53,14 +86,20 @@ namespace SpaceInvader
 
     char GetValueChar(const string &Value, const string &File, const char &defaultValue)
     {
+        // on essaye de récupére la valeur attacher à Value
         try
         {
+            // récupére les constante stocker dans File
             const std::map<std::string, std::string> &ArrayVal = LoadFile(File);
+            // récupére la valeur de la clée
             std::map<std::string, std::string>::const_iterator val = ArrayVal.find(Value);
+            // si elle n'existe pas ou est invalide on renvoie la valeur par défaut
             if(val == ArrayVal.end() || val->second.size()==0)
                 return defaultValue;
+            // sinon on retourne la premier lettre stocker
             return val->second[0];
         }
+        // si le fichier est introuvable ou n'importe quel erreur on renvoie la valeur par défaut
         catch(...)
         {
             return defaultValue;
@@ -69,14 +108,20 @@ namespace SpaceInvader
 
     string GetValueStr(const string &Value, const string &File, const string &defaultValue)
     {
+        // on essaye de récupére la valeur attacher à Value
         try
         {
+            //  on charge le fichier en mémoire et on le stock
             const std::map<std::string, std::string> &ArrayVal = LoadFile(File);
+            // on récupére la valueur attacher à la clée
             std::map<std::string, std::string>::const_iterator val = ArrayVal.find(Value);
+            // si elle n'existe pas
             if(val == ArrayVal.end() || val->second.size()==0)
                 return defaultValue;
+            //sinon on renvois la veuleur attacher à la variable
             return val->second;
         }
+        // si le fichier est introuvable ou n'importe quel erreur on renvoie la valeur par défaut
         catch(...)
         {
             return defaultValue;
@@ -84,6 +129,7 @@ namespace SpaceInvader
 
     }
 
+    // fonction qui permet de verifier si le nombre est un non signer
     bool isUnsignedValue(const string &ValTest)
     {
         for(const char &Value : ValTest)
@@ -92,8 +138,10 @@ namespace SpaceInvader
         return true;
     }
 
+    // permet de traduire une chaine de caractére en valeur numérique
     unsigned AliasToValueInt(const string &Value)
     {
+        // si la valeur est une couleur connue alors on renvois sa valeur numérique
         if("KJaune" == Value)
             return KJaune;
         if("KNoir" == Value)
@@ -108,42 +156,32 @@ namespace SpaceInvader
             return KMAgenta;
         if("KCyan" == Value)
             return KCyan;
+        // sinon on ne peut pas géré
         throw(runtime_error("Cannot Find Alias"));
     }
 
     unsigned GetValueInt(const string &Value, const string &File, const unsigned &defaultValue)
     {
+        // on essaye de récupére la valeur attacher à Value
         try
         {
+            //  on charge le fichier en mémoire et on le stock
             const std::map<std::string, std::string> &ArrayVal = LoadFile(File);
+            // on récupére la valeur attacher à Value
             std::map<std::string, std::string>::const_iterator val = ArrayVal.find(Value);
+            // si elle n'existe pas
             if(val == ArrayVal.end() || val->second.size()==0)
                 return defaultValue;
+            // si c'est une valeur non signé on l'extrait
             else if(isUnsignedValue(val->second))
                 return atoi(val->second.data());
+            // sinon on essait de traduire le supposer alias contenue
             return AliasToValueInt(val->second);
         }
+        // si le fichier n'existe pas ou l'alias n'est pas traduisible on retourne la valeur par défaut
         catch(...)
         {
             return defaultValue;
-        }
-    }
-
-    unsigned getType(const string &Value)
-    {
-        try
-        {
-            if(Value.size()==0 || !isUnsignedValue(Value))
-                return 0;
-            else if(Value.size()==1)
-                return 1;
-            else if(isUnsignedValue(Value))
-                return 2;
-            return 0;
-        }
-        catch(...)
-        {
-            return 0;
         }
     }
 }

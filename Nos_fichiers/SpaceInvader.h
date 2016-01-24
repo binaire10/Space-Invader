@@ -4,7 +4,7 @@
   * \file SpaceInvader.h
   * \author Alain Casali Marc Laporte
   * \date 15 janvier 2016
-  * \brief Fichier dÃ©crivant l'ensemble des signatures vers les fonctions utilisÃ©es dans le jeu avec prise
+  * \brief Fichier décrivant l'ensemble des signatures vers les fonctions utilisées dans le jeu avec prise
   * en compte du chargement du fichier de configuration
   * \version 1.1
   * \bug Aucun connu
@@ -14,6 +14,10 @@
 #include "../Correc_prof/MyType_AC.h"
 namespace SpaceInvader
 {
+    /**
+     * @brief Run
+     * lance le jeux
+     */
     void Run();
 }//namespace
 
