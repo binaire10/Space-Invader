@@ -528,7 +528,7 @@ namespace SpaceInvader
      * \param MyLife
      * Nombre de Vie Restant
      */
-    void ManageMe (CVString & Space, unsigned &MyPos, int &FireWait, unsigned &MyLife)
+    void ManageMe (CVString & Space, unsigned &MyPos, int &FireWait, unsigned &MyLife, int &Score)
     {
         string &CurrentLine = Space[Space.size()-1];
         char Move;
@@ -568,7 +568,7 @@ namespace SpaceInvader
                         Score += 500; // on augmente son score
                         break;
                     case 2:
-                        *j = KMur; // on place un Murt devant le joueur
+                        CurrentLine[MyPos-1] = KMur; // on place un Murt devant le joueur
                         break;
                     default: // sinon rien
                         break;
@@ -600,7 +600,7 @@ namespace SpaceInvader
                         Score += 500; // on augmente son score
                         break;
                     case 2:
-                        *j = KMur; // on place un Murt devant le joueur
+                        CurrentLine[MyPos+1] = KMur; // on place un Murt devant le joueur
                         break;
                     default: // sinon rien
                         break;
@@ -860,7 +860,7 @@ namespace SpaceInvader
                         ManageInvaderShoot(Space, LineInvader, PosInvader, PlayerLife);
 
                     chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now(); // on recupère le temps de début
-                    ManageMe(Space, PosMe, FireWait, PlayerLife); // on donne le tour au joueur
+                    ManageMe(Space, PosMe, FireWait, PlayerLife, Score); // on donne le tour au joueur
                     cout << GotoXY(0,0) << "\t\t\t" << SetColorAndBack(KNoir, KRouge) << string(KSizeLine+2,'-') << Reset() << endl; // place le haut de la grille
                     for(const string &Line : Space)
                     {
