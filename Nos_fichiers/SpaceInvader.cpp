@@ -1,9 +1,9 @@
 /*!
   * \file SpaceInvader.cpp
-  * \author Alain Casali Marc Laporte
+  * \author Wery Tramier Vandecastle Tillier Ranaivosoa
   * \date 15 janvier 2016
   * \brief Projet de C++ simulant un SpaceInvader
-  * \version 1.0
+  * \version 1.1
   * \bug Aucun connu
   */
 
@@ -74,29 +74,29 @@ namespace SpaceInvader
 
     /**
      * @brief CleanScreen
-     * Efface en dure l'écrant
+     * Efface en dure l'Ã©crant
      * @return
      */
-    string CleanScreen() // Code Pour effacer l'écran
+    string CleanScreen() // Code Pour effacer l'Ã©cran
     {
         return "\033[H\033[2J";
     }
 
-    string Reset() // Code pour réinitialiser la console
+    string Reset() // Code pour rÃ©initialiser la console
     {
         return "\033[0m";
     }
 
     /**
      * @brief GotoXY
-     * Permet de déplacer le curseur
+     * Permet de dÃ©placer le curseur
      * @param X
      * position X
      * @param Y
      * Poistion Y
      * @return
      */
-    string GotoXY(unsigned X, unsigned Y)  // Code pour déplacer le prompt
+    string GotoXY(unsigned X, unsigned Y)  // Code pour dÃ©placer le prompt
     {
         return "\033[" + to_string(Y+1) + ";" + to_string(X) + "H";
     }
@@ -109,7 +109,7 @@ namespace SpaceInvader
      * \param Y
      * Position Y
      */
-    void clearScreen(unsigned X, unsigned Y) // code pour effacer de manière réaliste la console
+    void clearScreen(unsigned X, unsigned Y) // code pour effacer de maniÃ¨re rÃ©aliste la console
     {
         cout << GotoXY(0,0);
         string EmptyLine(Y+1,' ');
@@ -150,35 +150,35 @@ namespace SpaceInvader
      * \brief PrintGameLine
      * Fonction pour afficher la grille de jeux
      * \param Line
-     * Ligne à afficher
+     * Ligne Ã  afficher
      */
     void PrintGameLine(const string &Line)
     {
         for(const char &CharLine : Line)
         {
-            if(CharLine == KInsideInvader) // si le caractère à affficher est celui d'un invader alors on change la couleur
+            if(CharLine == KInsideInvader) // si le caractÃ¨re Ã  affficher est celui d'un invader alors on change la couleur
                 cout << SetColor(KInvadersColor);
-            else if(CharLine == KInsideMe) // si le caractère à affficher est celui du Joueur alors on change la couleur
+            else if(CharLine == KInsideMe) // si le caractÃ¨re Ã  affficher est celui du Joueur alors on change la couleur
                 cout << SetColor(KMyColor);
             else
-                cout << Reset(); // si non on réinitialise la couleur de fond
-            cout << CharLine; // on affiche le caractère
+                cout << Reset(); // si non on rÃ©initialise la couleur de fond
+            cout << CharLine; // on affiche le caractÃ¨re
         }
     }
 
     /*!
      * \brief write
-     * permet d'écrire du texte sur la console à l'image d'un machine à écrire
+     * permet d'Ã©crire du texte sur la console Ã  l'image d'un machine Ã  Ã©crire
      * \param Text
-     * texte à écrire sur la console
+     * texte Ã  Ã©crire sur la console
      * \param LineSize
      * Longueur d'une ligne
      * \param uTime
-     * temp en microseconde pour écrire
+     * temp en microseconde pour Ã©crire
      * \param LineBegin
-     * premier ligne ou écrire
+     * premier ligne ou Ã©crire
      * \param ColumBegin
-     * colone ou écrire
+     * colone ou Ã©crire
      */
     void write(const string &Text, const unsigned &LineSize, const unsigned &uTime, const unsigned &LineBegin, const unsigned &ColumBegin)
     {
@@ -188,33 +188,33 @@ namespace SpaceInvader
         for(unsigned i(0) ; i<Text.size() ; ++i)
         {
             const char &letter = Text[i];
-            cout << letter << flush; // On force l'affichage du texte sans pour autant faire de retour à la ligne
+            cout << letter << flush; // On force l'affichage du texte sans pour autant faire de retour Ã  la ligne
             if((i+1)%LineSize ==0)
             {
-                // si on revient à la ligne on déplace manuellement le prompt
+                // si on revient Ã  la ligne on dÃ©place manuellement le prompt
                 ++line;
                 cout << GotoXY(ColumBegin,LineBegin+line);
                 usleep(uTime*12/7);
             }
             if(isalnum(letter) && alphaLast!=letter)
-                usleep(uTime); // Si ce n'est pas la même lettre que la dernière tappée, on attend.
+                usleep(uTime); // Si ce n'est pas la mÃªme lettre que la derniÃ¨re tappÃ©e, on attend.
             else if(letter==' ' && alphaLast!=letter)
-                usleep(uTime*8/7); // Si c'est un espace ou un retour à la ligne on attend plus longtemps.
+                usleep(uTime*8/7); // Si c'est un espace ou un retour Ã  la ligne on attend plus longtemps.
 
             if(alphaLast==letter)
                 alphaLast = '\0';
             else
-                alphaLast = letter; // on récupère la dernière lettre tappée.
+                alphaLast = letter; // on rÃ©cupÃ¨re la derniÃ¨re lettre tappÃ©e.
         }
     }
 
     /*!
      * \brief resizeText
-     * Fonction qui redimensione le nombre de mots par longueur de caractére
+     * Fonction qui redimensione le nombre de mots par longueur de caractÃ©re
      * \param Text
-     * texte à redimensionner
+     * texte Ã  redimensionner
      * \param size
-     * longeur de caractére
+     * longeur de caractÃ©re
      * \return
      * chaine transformer
      */
@@ -235,32 +235,32 @@ namespace SpaceInvader
             unsigned sizeLine(0);
             while(sizeLine<=size && PosWordEnd!=Line.end())
             {
-                sizeLine+=PosWordEnd->size(); // on mesure la supposée longueur jusqu'à ce que la longueur de la chaine soit trop longue
+                sizeLine+=PosWordEnd->size(); // on mesure la supposÃ©e longueur jusqu'Ã  ce que la longueur de la chaine soit trop longue
                 ++PosWordEnd;
             }
 
             if(sizeLine>size)
             {
-                if((PosWordBegin+1) != PosWordEnd) // si il y a plusieurs mots à afficher
+                if((PosWordBegin+1) != PosWordEnd) // si il y a plusieurs mots Ã  afficher
                 {
-                    sizeLine -= (--PosWordEnd)->size(); // on retire le dernier mot à afficher
+                    sizeLine -= (--PosWordEnd)->size(); // on retire le dernier mot Ã  afficher
                 }
 
                 for(vector<string>::iterator i(PosWordBegin) ; i<PosWordEnd ; ++i)
                 {
-                    Result += *i; // on réassemble les mots entre
+                    Result += *i; // on rÃ©assemble les mots entre
                 }
             }
             else
             {
                 for(vector<string>::iterator i(PosWordBegin) ; i<PosWordEnd ; ++i)
                 {
-                    Result += *i; // on réassemble les mots entre
+                    Result += *i; // on rÃ©assemble les mots entre
                 }
             }
             if(Result.size()%size!=0) // si la longueur de la nouvelle ligne n'est pas conforme
                 Result += string(size-(Result.size()%size),' '); // on comble d'espaces pour la rendre conforme
-            PosWordBegin = PosWordEnd; // on recommence à partir de Pos WordEnd
+            PosWordBegin = PosWordEnd; // on recommence Ã  partir de Pos WordEnd
         }
         assert(Result.size()%size == 0); // on controle que les phrases soient conformes
         return Result; // on retourne le resultat
@@ -268,15 +268,15 @@ namespace SpaceInvader
 
     /*!
      * \brief ManageScenar
-     * gére l'avancer dans l'histoire du joueur
+     * gÃ©re l'avancer dans l'histoire du joueur
      * \param Level
      * niveau du joueur
      */
     void ManageScenar ( const unsigned &Level )
     {
-        cout << GotoXY(0,0); // on place le curseur au début
+        cout << GotoXY(0,0); // on place le curseur au dÃ©but
 
-        // différentes chaines de texte qui constituent le scénario
+        // diffÃ©rentes chaines de texte qui constituent le scÃ©nario
         const string KStrIntroduction = "Cela faisait maintenant 2 jours que le drame s'etait produit. Johnny, bien decide a faire payer les coupables, "
                                         "acheta un vaisseau a un vieil ami. C'etait l'heure de la revanche.";
 
@@ -284,14 +284,14 @@ namespace SpaceInvader
                                  " il entendit au loin les tirs raisonner au fin fond du vide de l'espace. Mais Johnny etait deja pret. ";
 
         const string KStrLevel3 ="8 jours depuis le drame. Johnny recuperait sur Pandore, planete tellurique riche en oxygene de la voie lactee de la Bulle Savonneuse, "
-                                 "un droide du nom de C6R4. Meme si il n'était qu'une IA, ils avaient la meme philosophie de vie suite au drame qui a bouleverse la vie "
+                                 "un droide du nom de C6R4. Meme si il n'Ã©tait qu'une IA, ils avaient la meme philosophie de vie suite au drame qui a bouleverse la vie "
                                  "dans l'univers il y avait maintenant 8 jours.";
 
         const string KStrLevel4 ="10 jours depuis le drame. Johnny commencait a s'interroger sur le but de sa quete, y aura - t - il un jour une fin a cette guerre ? "
-                                 "Pourrons-nous un jour nous entendre à nouveau ? Ces questions rongeaient Johnny au plus profond de son etre..";
+                                 "Pourrons-nous un jour nous entendre Ã  nouveau ? Ces questions rongeaient Johnny au plus profond de son etre..";
 
         const string KStrLevel5 ="12 jours depuis le drame. C'est fini, la musique de la marche imperiale se fait entendre du fond de l'etoile robotisee dans laquelle Johnny est enferme"
-                                 "Lorsque tout espoir disparut aux yeux de Johnny, C6R4 surgit et le libéra. Ils dérobèrent un X-Zwim dans le hangar de l'empire. "
+                                 "Lorsque tout espoir disparut aux yeux de Johnny, C6R4 surgit et le libÃ©ra. Ils dÃ©robÃ¨rent un X-Zwim dans le hangar de l'empire. "
                                  "C'etait l'heure du dernier combat. Ils allaient payer pour avoir aime Star Wars 7.";
         switch (Level) // niveau atteint par le joueur
         {
@@ -317,22 +317,22 @@ namespace SpaceInvader
 
     /*!
      * \brief MoveTo
-     * déplace les objets du From ver le To. Si une colision à lieu les 2 son effacer
+     * dÃ©place les objets du From ver le To. Si une colision Ã  lieu les 2 son effacer
      * \param From
-     * Position de l'objet qui veux se déplacer
+     * Position de l'objet qui veux se dÃ©placer
      * \param To
      * Destination de l'objet
      * \return
-     * Retourne le caractére qui était sur le to
+     * Retourne le caractÃ©re qui Ã©tait sur le to
      */
     char MoveTo(string::iterator &From, string::iterator &To)
     {
-        char LastValueTo(*To); // on sauve la valeur d'origine stockée dans To
+        char LastValueTo(*To); // on sauve la valeur d'origine stockÃ©e dans To
         if(*To!=KEmpty)
             *To = KEmpty;  // si la destination n'est pas vide on l'efface
         else
-            *To = *From; // si elle est vide alors on déplace le contenu de From
-        *From = KEmpty; // On affecte KEmpty à la position d'origine
+            *To = *From; // si elle est vide alors on dÃ©place le contenu de From
+        *From = KEmpty; // On affecte KEmpty Ã  la position d'origine
         return LastValueTo;
     }
 
@@ -358,7 +358,7 @@ namespace SpaceInvader
 
     /*!
      * \brief WinTest
-     * Test si le joueur à gagner
+     * Test si le joueur Ã  gagner
      * \param Space
      * Espace de jeux
      * \param Line
@@ -374,13 +374,13 @@ namespace SpaceInvader
 
     /*!
      * \brief LoseTest
-     * test si le joueur à perdue
+     * test si le joueur Ã  perdue
      * \param Space
      * Espace de jeux
      * \param Line
      * Ligne ou se trouve le joueur
      * \return
-     * revois vrai si le joueur à était éliminer
+     * revois vrai si le joueur Ã  Ã©tait Ã©liminer
      */
     bool LoseTest(CVString &Space, const unsigned &Line)
     {
@@ -390,11 +390,11 @@ namespace SpaceInvader
 
     /*!
      * \brief ManageInvaderMove
-     * Déplace l'invader
+     * DÃ©place l'invader
      * \param Space
      * Espace de jeux
      * \param Increment
-     * Donne le sens de déplacement du joueur
+     * Donne le sens de dÃ©placement du joueur
      * \param CurrentLine
      * Ligne de l'invader
      * \param Beg
@@ -402,11 +402,11 @@ namespace SpaceInvader
      */
     void ManageInvaderMove(CVString &Space, bool &Increment, unsigned &CurrentLine, unsigned &Beg)
     {
-        string &currentLine = Space[CurrentLine];// on récupère la derniere ligne pour un accés rapide
+        string &currentLine = Space[CurrentLine];// on rÃ©cupÃ¨re la derniere ligne pour un accÃ©s rapide
 
-        if(Increment == false && currentLine[0] == KInsideInvader) // si l'invader est en début de ligne
+        if(Increment == false && currentLine[0] == KInsideInvader) // si l'invader est en dÃ©but de ligne
         {
-            Increment = true; // on change de sens de déplacement
+            Increment = true; // on change de sens de dÃ©placement
             string &futureLine = Space[++CurrentLine];
             for(string::iterator i(currentLine.begin()), j(futureLine.begin()) ; i!=currentLine.end() && j!=futureLine.end() ; ++i, ++j)
                 if(*i == KInsideInvader)
@@ -419,7 +419,7 @@ namespace SpaceInvader
                     else
                     {
                         *j = *i;
-                        *i = KEmpty; // sinon on déplace l'invader
+                        *i = KEmpty; // sinon on dÃ©place l'invader
                     }
                 }
             return; // On finit le tour de l'invader
@@ -439,17 +439,17 @@ namespace SpaceInvader
                     else
                     {
                         *j = *i;
-                        *i = KEmpty; // sinon on déplace l'invader
+                        *i = KEmpty; // sinon on dÃ©place l'invader
                     }
                 }
             return; // On finit le tour de l'invader
         }
 
-        if(Increment) // selon qu'on incrémente ou décrémente on déplace l'invader
+        if(Increment) // selon qu'on incrÃ©mente ou dÃ©crÃ©mente on dÃ©place l'invader
         {
             for(string::iterator i(currentLine.end()-1), j(currentLine.end()) ; j!=currentLine.begin() ; --i,--j) // on parcoure toute la ligne
             {
-                if(*i == KInsideInvader) // si l'élément actuel est l'invader
+                if(*i == KInsideInvader) // si l'Ã©lÃ©ment actuel est l'invader
                 {
                     if(*j   ==  KTorpedo) // si la destination est une torpille
                     {
@@ -459,7 +459,7 @@ namespace SpaceInvader
                     else
                     {
                         *j = *i;
-                        *i = KEmpty; // sinon on déplace l'invader
+                        *i = KEmpty; // sinon on dÃ©place l'invader
                     }
                 }
             }
@@ -468,7 +468,7 @@ namespace SpaceInvader
         {
             for(string::iterator i(currentLine.begin()), j(currentLine.begin()+1) ; j!=currentLine.end() ; ++i, ++j) // on parcoure toute la ligne
             {
-                if(*j == KInsideInvader) // si l'élément actuel est l'invader
+                if(*j == KInsideInvader) // si l'Ã©lÃ©ment actuel est l'invader
                 {
                     if(*i   ==  KTorpedo) // si la destination est un torpille
                     {
@@ -477,7 +477,7 @@ namespace SpaceInvader
                     }
                     else
                     {
-                        *i = *j; // sinon on déplace L'invader
+                        *i = *j; // sinon on dÃ©place L'invader
                         *j = KEmpty;
                     }
                 }
@@ -489,7 +489,7 @@ namespace SpaceInvader
 
     /*!
      * \brief ManageInvaderShoot
-     * Fonction qui fait tirée l'invader
+     * Fonction qui fait tirÃ©e l'invader
      * \param Space
      * Espace de jeux
      * \param CurrentLine
@@ -502,15 +502,15 @@ namespace SpaceInvader
     void ManageInvaderShoot(CVString & Space, unsigned &CurrentLine, unsigned &Beg, unsigned &MyLife)
     {
         string SMisile(1,KMissile); // origine du missile (lance missile)
-        unsigned pos(rand()%KInvadersSize); // generation aleatoire de la position où le missile va apparaitre
+        unsigned pos(rand()%KInvadersSize); // generation aleatoire de la position oÃ¹ le missile va apparaitre
         string &ShootLine = Space[CurrentLine+1]; // racourci vers la ligne de tire
-        while(Space[CurrentLine][pos + Beg] != KInsideInvader)
+        while(Space[CurrentLine][pos + Beg] != KInsideInvader && !WinTest(Space, CurrentLine))
             pos = (pos+1)%KInvadersSize; // tant que le missile n'est pas en face d'un invader
         string::iterator dest(ShootLine.begin()+ pos + Beg); // destination du missile
         string::iterator from(SMisile.begin()); // origine
-        if(MoveTo(from, dest) == KInsideMe) // déplacement du Missile
+        if(MoveTo(from, dest) == KInsideMe) // dÃ©placement du Missile
         {
-            --MyLife; // Si le Missile apparait sur le joueur on l'élimine
+            --MyLife; // Si le Missile apparait sur le joueur on l'Ã©limine
             if(MyLife != 0)
                 *dest = KInsideMe;
         }
@@ -524,7 +524,7 @@ namespace SpaceInvader
      * \param MyPos
      * Position du joueur
      * \param FireWait
-     * Nombre de tour à attendre avant de pouvoir  tiré
+     * Nombre de tour Ã  attendre avant de pouvoir  tirÃ©
      * \param MyLife
      * Nombre de Vie Restant
      */
@@ -532,7 +532,7 @@ namespace SpaceInvader
     {
         string &CurrentLine = Space[Space.size()-1];
         char Move;
-        //fonction en C qui permet de lire un caractère. cin ne fonctionnant pas dans cette configuration
+        //fonction en C qui permet de lire un caractÃ¨re. cin ne fonctionnant pas dans cette configuration
 #ifdef __WIN32__  // Support Multi Platform
         // lecture de touche windows
         Move = '\0';
@@ -552,30 +552,68 @@ namespace SpaceInvader
             read (STDIN_FILENO, &Buf, 1);
 #endif
         if(Move==KLeft)
-        { // Si on se déplace à gauche
-            if(MyPos != 0)// on verifie qu'on ne soit pas trop à gauche
+        { // Si on se dÃ©place Ã  gauche
+            if(MyPos != 0)// on verifie qu'on ne soit pas trop Ã  gauche
             {
-                if(CurrentLine[MyPos-1] == KMissile && MyLife!=0) // si on se déplace sur un missile
-                    --MyLife; // on décrémente 
+                if(CurrentLine[MyPos-1] == KBonus)
+                {
+                    unsigned Bonus;
+                    Bonus = rand()%3; // on choisi un bonus au hazard
+                    switch(Bonus)
+                    {
+                    case 0:
+                        ++MyLife; // on incrÃ©mente sa vie
+                        break;
+                    case 1:
+                        Score += 500; // on augmente son score
+                        break;
+                    case 2:
+                        *j = KMur; // on place un Murt devant le joueur
+                        break;
+                    default: // sinon rien
+                        break;
+                    }
+                }
+                if(CurrentLine[MyPos-1] == KMissile && MyLife!=0) // si on se dÃ©place sur un missile
+                    --MyLife; // on dÃ©crÃ©mente 
                 if(MyLife==0) // si le joueur est mort on l'efface
                     CurrentLine[MyPos] = KEmpty;
                 else
-                    swap(CurrentLine[MyPos], CurrentLine[MyPos-1]); // on échange les positions entre elles
-                --MyPos;// on décremente la position
+                    swap(CurrentLine[MyPos], CurrentLine[MyPos-1]); // on Ã©change les positions entre elles
+                --MyPos;// on dÃ©cremente la position
             }
         }
         else if(Move==KRight)
-        { // Si on se déplace à droite
+        { // Si on se dÃ©place Ã  droite
             if((MyPos+1) != CurrentLine.size())
             {
+                if(CurrentLine[MyPos+1] == KBonus)
+                {
+                    unsigned Bonus;
+                    Bonus = rand()%3; // on choisi un bonus au hazard
+                    switch(Bonus)
+                    {
+                    case 0:
+                        ++MyLife; // on incrÃ©mente sa vie
+                        break;
+                    case 1:
+                        Score += 500; // on augmente son score
+                        break;
+                    case 2:
+                        *j = KMur; // on place un Murt devant le joueur
+                        break;
+                    default: // sinon rien
+                        break;
+                    }
+                }
                 if(CurrentLine[MyPos+1] == KMissile && MyLife!=0)
-                    --MyLife; // si l'invader se déplace sur un missile
+                    --MyLife; // si l'invader se dÃ©place sur un missile
                 if(MyLife==0)
                 {
                     CurrentLine[MyPos] = KEmpty; // si l'invader est mort
                 }
                 else
-                    swap(CurrentLine[MyPos], CurrentLine[MyPos+1]); // on échange les positions entre elles
+                    swap(CurrentLine[MyPos], CurrentLine[MyPos+1]); // on Ã©change les positions entre elles
                 ++MyPos; // on incremente la position
             }
         }
@@ -590,7 +628,7 @@ namespace SpaceInvader
 
     /*!
      * \brief ManageMissileAndTorpedo
-     * Controle la physique de déplacement d'objet telle que des missile
+     * Controle la physique de dÃ©placement d'objet telle que des missile
      * \param Space
      * \param InvaderCount
      * \param MyLife
@@ -600,7 +638,7 @@ namespace SpaceInvader
      */
     void ManageMissileAndTorpedo(CVString &Space, unsigned &InvaderCount, unsigned &MyLife, int &Score)
     {
-        string &FirstLine = Space[0]; // Alias vers la ligne de départ
+        string &FirstLine = Space[0]; // Alias vers la ligne de dÃ©part
         string &LastLine = Space[Space.size()-1]; // alias vers la derniere ligne
 
         for(char &Val : FirstLine) // on efface toute les torpilles sur la premiere ligne
@@ -615,44 +653,44 @@ namespace SpaceInvader
             if(Val == KBonus)
                 Val = KEmpty;
 
-        vector<string::iterator> DontMoveIt; // On stock ici l'emplacement des objets déja déplacés
+        vector<string::iterator> DontMoveIt; // On stock ici l'emplacement des objets dÃ©ja dÃ©placÃ©s
 
-        for(CVString::iterator i(Space.begin()), z(Space.begin()+1) ; z!=Space.end() ; ++i, ++z) // i représente la premiere ligne j la deuxiéme de façon à ce que les missiles aillent de i ver z et les torpilles de j ver i
+        for(CVString::iterator i(Space.begin()), z(Space.begin()+1) ; z!=Space.end() ; ++i, ++z) // i reprÃ©sente la premiere ligne j la deuxiÃ©me de faÃ§on Ã  ce que les missiles aillent de i ver z et les torpilles de j ver i
         {
-            for(string::iterator j(i->begin()), k(z->begin()) ; j!=i->end() ; ++j, ++k) // j et k sont la même colone
+            for(string::iterator j(i->begin()), k(z->begin()) ; j!=i->end() ; ++j, ++k) // j et k sont la mÃªme colone
             {
-                // ici on déplacé les torpilles
-                if(*k == KTorpedo && find(DontMoveIt.begin(), DontMoveIt.end(), k)==DontMoveIt.end()) // si la torpille n'a pas encore bougé
+                // ici on dÃ©placÃ© les torpilles
+                if(*k == KTorpedo && find(DontMoveIt.begin(), DontMoveIt.end(), k)==DontMoveIt.end()) // si la torpille n'a pas encore bougÃ©
                 {
-                    if(MoveTo(k, j) == KInsideInvader) // on la déplace
-                        --InvaderCount; // si on touche un invader on décompte le nombre d'invaders restant
-                    DontMoveIt.push_back(j);// on l'ajoute à la liste des objets à ne pas déplacer
+                    if(MoveTo(k, j) == KInsideInvader) // on la dÃ©place
+                        --InvaderCount; // si on touche un invader on dÃ©compte le nombre d'invaders restant
+                    DontMoveIt.push_back(j);// on l'ajoute Ã  la liste des objets Ã  ne pas dÃ©placer
                 }
 
-                // ici on s'occupe de déplacer les Missiles
-                if(*j == KMissile&& find(DontMoveIt.begin(), DontMoveIt.end(), j)==DontMoveIt.end()) // si il n'est pas dans la liste on ne le déplace pas
+                // ici on s'occupe de dÃ©placer les Missiles
+                if(*j == KMissile && find(DontMoveIt.begin(), DontMoveIt.end(), j)==DontMoveIt.end()) // si il n'est pas dans la liste on ne le dÃ©place pas
                 {
                     if(MoveTo(j, k) == KInsideMe)
-                    { // si il touche un joueur on décrémente le nombre de vies du joueur
+                    { // si il touche un joueur on dÃ©crÃ©mente le nombre de vies du joueur
                         --MyLife;
                         if(MyLife != 0)
                             *k = KInsideMe;
                     }
-                    DontMoveIt.push_back(k); // on l'ajoute à la liste d'objets a ne pas déplacer
+                    DontMoveIt.push_back(k); // on l'ajoute Ã  la liste d'objets a ne pas dÃ©placer
                 }
 
                 // si c'est un bonus
-                if(*j == KBonus && find(DontMoveIt.begin(), DontMoveIt.end(), j)==DontMoveIt.end()) // on verifie qu'il n'a pas déjà bougé
+                if(*j == KBonus && find(DontMoveIt.begin(), DontMoveIt.end(), j)==DontMoveIt.end()) // on verifie qu'il n'a pas dÃ©jÃ  bougÃ©
                 {
-                    if(MoveTo(j, k) == KInsideMe) // si lors du déplacement il touche le joueur on l'élimine
+                    if(MoveTo(j, k) == KInsideMe) // si lors du dÃ©placement il touche le joueur on l'Ã©limine
                     {
-                        *k = KInsideMe; // on replace le joueur effacé lors de la collision avec le bonus
+                        *k = KInsideMe; // on replace le joueur effacÃ© lors de la collision avec le bonus
                         unsigned Bonus;
                         Bonus = rand()%3; // on choisi un bonus au hazard
                         switch(Bonus)
                         {
                         case 0:
-                            ++MyLife; // on incrémente sa vie
+                            ++MyLife; // on incrÃ©mente sa vie
                             break;
                         case 1:
                             Score += 500; // on augmente son score
@@ -664,7 +702,7 @@ namespace SpaceInvader
                             break;
                         }
                     }
-                    DontMoveIt.push_back(k); // on l'ajoute à la liste des objets dejà déplacés
+                    DontMoveIt.push_back(k); // on l'ajoute Ã  la liste des objets dejÃ  dÃ©placÃ©s
                 }
             }
         }
@@ -697,7 +735,7 @@ namespace SpaceInvader
      */
     void MainFont(const unsigned &EyeColor = KRouge, const unsigned &BodyColor = KNoir, const unsigned &BackGroundColor = KVert)
     {
-        cout << GotoXY(0,0); // on déplace le prompt à la position 0,0
+        cout << GotoXY(0,0); // on dÃ©place le prompt Ã  la position 0,0
         string ColorBody  (SetColorAndBack(BodyColor, BodyColor));
         string ColorEye (SetColorAndBack(EyeColor, EyeColor));
         string ColorBackBody (SetColorAndBack(BackGroundColor, BodyColor));
@@ -730,22 +768,22 @@ namespace SpaceInvader
 
         for(string::iterator i(Picture.begin()) ; i != Picture.end() ; ++i)
         {
-            if(*i==' ') // on définit la couleur pour chaque espace
+            if(*i==' ') // on dÃ©finit la couleur pour chaque espace
                 cout << ColorBody;
-            else if(*i=='X') // on définit la couleur pour les yeux
+            else if(*i=='X') // on dÃ©finit la couleur pour les yeux
                 cout << ColorEye;
-            else if(*i=='.') // on définit la couleur d'une partie du corps de l'invader
+            else if(*i=='.') // on dÃ©finit la couleur d'une partie du corps de l'invader
                 cout << ColorBackBody;
-            else if(*i=='M') // on définit la couleur du fond de l'invader
+            else if(*i=='M') // on dÃ©finit la couleur du fond de l'invader
                 cout << ColorBackground;
             else
-                cout << Reset(); // sinon on réinitialise la console
+                cout << Reset(); // sinon on rÃ©initialise la console
             cout << *i;
             usleep(5000); // on attend quelques minisecondes
         }
-        cout << Reset() << flush; // on réinitialise la console
+        cout << Reset() << flush; // on rÃ©initialise la console
         sleep(2); // on laisse l'image quelques secondes
-        clearScreen(25,60); // on efface l'écran de manière spéciale
+        clearScreen(25,60); // on efface l'Ã©cran de maniÃ¨re spÃ©ciale
     }
 
     /*!
@@ -754,8 +792,8 @@ namespace SpaceInvader
      */
     void Run()
     {
-        QThread Thread; // on crée un objet QThread pour le Timer de QMediaPlayer
-        QMediaPlayer player; // on crée un lecteur de Musique
+        QThread Thread; // on crÃ©e un objet QThread pour le Timer de QMediaPlayer
+        QMediaPlayer player; // on crÃ©e un lecteur de Musique
         player.moveToThread(&Thread); // on le place dans le Thread
         player.setVolume(50); // on modifie le volume
         QVector<QUrl> playlist; // on affecte une playlist d'URL
@@ -772,7 +810,7 @@ namespace SpaceInvader
         srand (time(NULL));
         set_input_mode();
         MainFont(); // On affiche un Invader
-        CVString Space; // On crée la variable qui est la grille de jeux
+        CVString Space; // On crÃ©e la variable qui est la grille de jeux
         int FinalScore(0); // variable qui stock le score
         unsigned Level(0); // variable qui stock le niveau atteint par le joueur
         for( ; Level<5 && (Level==0 || !LoseTest(Space, Space.size()-1)) ; ++Level)
@@ -784,35 +822,35 @@ namespace SpaceInvader
                 FirstInvaderCount = KInvadersSize*2/3;
             unsigned PlayerLife (KMyLife); // Variable stockant la vie du joueur
             int Score(0); // score du joueur
-            bool Increment(true); // variable qui donne le sens de déplacement de l'invader
-            int FireWait(0); // Variable evitant que le joueur puisse tiré rapidement
+            bool Increment(true); // variable qui donne le sens de dÃ©placement de l'invader
+            int FireWait(0); // Variable evitant que le joueur puisse tirÃ© rapidement
             initSpace(Space, PosMe, LineInvader); // Variable initialisant
-            cout << CleanScreen(); // on efface l'écran pour rafraichir l'image
+            cout << CleanScreen(); // on efface l'Ã©cran pour rafraichir l'image
 
             player.stop();
             player.setMedia(playlist[3]); // on joue la musique de scenario
             player.play();
 
-            ManageScenar(Level); // démarage de l'affichage du scénario
+            ManageScenar(Level); // dÃ©marage de l'affichage du scÃ©nario
 
             player.stop();
             player.setMedia(playlist[4]); // a la fin du scenario on lance la musique de jeux
             player.play();
 
-            cout << CleanScreen(); // on efface l'écran
-            unsigned Turn(0); // nombre de tours écoulés
+            cout << CleanScreen(); // on efface l'Ã©cran
+            unsigned Turn(0); // nombre de tours Ã©coulÃ©s
             while(!WinTest(Space, LineInvader) && !LoseTest(Space, Space.size()-1)) // on boucle tan que le joueur ou l'invader n'a pas gagne ou qu'il soit arrive sur la dernier ligne
             {
-                Score -= 10; // on decremente le score à chaque tours de l'invader
+                Score -= 10; // on decremente le score Ã  chaque tours de l'invader
 
 
-                for(unsigned i(0) ; i<KRatioMeInvaders &&  (!WinTest(Space, LineInvader) && !LoseTest(Space, Space.size()-1)); ++i, ++Turn) // boucle pour equilibré le ration
+                for(unsigned i(0) ; i<KRatioMeInvaders &&  (!WinTest(Space, LineInvader) && !LoseTest(Space, Space.size()-1)); ++i, ++Turn) // boucle pour equilibrÃ© le ration
                 {
-                    unsigned LastInvaderCount (FirstInvaderCount); // on sauvegarde le nombre d'invaders avant de faire se déplacer les missile
+                    unsigned LastInvaderCount (FirstInvaderCount); // on sauvegarde le nombre d'invaders avant de faire se dÃ©placer les missile
 
                     ManageMissileAndTorpedo(Space, FirstInvaderCount, PlayerLife, Score);
 
-                    if(LastInvaderCount != FirstInvaderCount) // si il manque un ou plusieurs invaders on incrémente le score et on fait apparaitre un bonus
+                    if(LastInvaderCount != FirstInvaderCount) // si il manque un ou plusieurs invaders on incrÃ©mente le score et on fait apparaitre un bonus
                     {
                         ManageBonus(Space, LineInvader);
                         Score += 100;
@@ -821,7 +859,7 @@ namespace SpaceInvader
                     if(Turn%KMissileRatio == 0) // on respecte un ratio pour les tirs de missile
                         ManageInvaderShoot(Space, LineInvader, PosInvader, PlayerLife);
 
-                    chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now(); // on recupère le temps de début
+                    chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now(); // on recupÃ¨re le temps de dÃ©but
                     ManageMe(Space, PosMe, FireWait, PlayerLife); // on donne le tour au joueur
                     cout << GotoXY(0,0) << "\t\t\t" << SetColorAndBack(KNoir, KRouge) << string(KSizeLine+2,'-') << Reset() << endl; // place le haut de la grille
                     for(const string &Line : Space)
@@ -834,14 +872,14 @@ namespace SpaceInvader
                     cout << SetColorAndBack(KCyan, KRouge) << resizeText("             Score : " + to_string(Score) + " Player Life : " + to_string(PlayerLife), 60) << Reset() << endl; // afficher les info du jeux
                     cout << SetColorAndBack(KCyan, KRouge) << resizeText("   FinalScore : " + to_string(Score + FinalScore) + " Invader Count : " + to_string(FirstInvaderCount),60)<< Reset() << endl;
                     chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
-                    auto duration = chrono::duration_cast<chrono::microseconds>( t2 - t1 ).count(); // on fait la différence pour eviter que le jeux aille trop vite
+                    auto duration = chrono::duration_cast<chrono::microseconds>( t2 - t1 ).count(); // on fait la diffÃ©rence pour eviter que le jeux aille trop vite
                     if(duration<350000)
-                        usleep(350000-duration); // on attend que le temps manquant ce soit écoulé
+                        usleep(350000-duration); // on attend que le temps manquant ce soit Ã©coulÃ©
                 }
                 if(player.state() != QMediaPlayer::PlayingState) // si la musique s'arrete on la relance
                     player.play();
 
-                ManageInvaderMove(Space, Increment,  LineInvader, PosInvader); // on déplace l'invader
+                ManageInvaderMove(Space, Increment,  LineInvader, PosInvader); // on dÃ©place l'invader
             }
             if(PlayerLife==0)
             {
