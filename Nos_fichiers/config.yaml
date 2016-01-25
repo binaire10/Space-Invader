@@ -4,34 +4,34 @@ KLeft                : w
 KShoot               :   
 
 //  Constantes liées à l envahisseur
-KInvadersColor 		 : KJaune
+KInvadersColor    : KJaune
 KInsideInvader       : W
 KMissile             : T
-KBegInvader 		 : 0
-KInvadersSize    	 : 5
-KMissileRatio 		 : 2
+KBegInvader    : 0
+KInvadersSize      : 5
+KMissileRatio    : 2
 
 // Constantes liées au joueur
 KInsideMe            : A
-KTorpedo			 : |
-KMyColor			 : KVert
-KMyLife          	 : 4
-KRatioMeInvaders 	 : 4
-KBegMe				 : 5
+KTorpedo             : |
+KMyColor             : KRouge
+KMyLife              : 4
+KRatioMeInvaders     : 4
+KBegMe               : 5
 
 // Constantes liées à l'eapace  de jeu (l'écran)
-KSizeLine   		 : 10
-KSizeSpace  		 : 10
+KSizeLine      : 10
+KSizeSpace     : 10
 KEmpty               : 
 
 // Constantes liées au fonctionalité
-KBonus              : *
+KBonus              : B
 KRatio              : 60
-KMur                : =
+KMur                : #
 
 // Adresse des ressources audio en ligne ou sur le PC (pour un fichier present du le PC le format est ( files:///ADRESSE_VERS_LE_FICHIERS )
-KIntroSound          : http://216.227.134.162/ost/space-invaders-gbc-gb-/xanousrrne/01-title-screen.mp3
-KHistoSound          : http://cdn.frustra.org/sounds/sound/vo/core01/space21.mp3
-KGameSound           : http://216.227.134.162/ost/space-invaders-gbc-gb-/tmymegclzp/12-invader-homeworld.mp3
-KGameOverSound       : http://216.227.134.162/ost/pokemon-yellow-blue-red-gb-/oacqzkmnml/01-opening-part-1-.mp3
-KEndSound            : http://i1.theportalwiki.net/img/1/1e/Portal2-13-Want_You_Gone_RT.mp3
+KIntroSound          : http://66.90.91.26/ost/pokemon-gold-silver/mztvvniogc/22-trainer-battle-theme-1.mp3
+KHistoSound          : http://66.90.91.26/ost/pokemon-gold-silver/jsoxvamhwr/13-route-29.mp3
+KGameSound           : http://66.90.91.26/ost/splatoon-gamerip-/dzokvigbrs/008-tutorial-theme-5th-section-.mp3
+KGameOverSound       : http://66.90.91.26/ost/splatoon-gamerip-/rfpqkvsqff/022-defeat-theme.mp3
+KEndSound            : http://66.90.91.26/ost/splatoon-gamerip-/pzxjtrmeum/040-main-theme-unofficial-medley-by-nintenroy-.mp3

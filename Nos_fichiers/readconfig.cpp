@@ -57,25 +57,25 @@ namespace SpaceInvader
         {
             // Position dans la ligne
             unsigned offset(0);
-            // Clé dans la map
+            // ClÃ© dans la map
             string  Key;
-            // Valeur de la clé
+            // Valeur de la clÃ©
             string  Value;
-            // si la ligne est vide on lance une exception (l'exception est attrapée par l'extracteur)
+            // si la ligne est vide on lance une exception (l'exception est attrapÃ©e par l'extracteur)
             if(Line.size() == 0)
-                throw("can't read File : "+File);
+                continue;
             // on saute jusqu'au premier mot
             while (offset<Line.size() && Line[offset]==' ') ++offset;
             // on extrait le mot
             while (offset<Line.size() && Line[offset]!=' ') Key.push_back(Line[offset++]);
             // on saute jusqu'au :
             while (offset<Line.size() && Line[offset]==' ') ++offset;
-            // si il n'est pas trouvé on quitte
+            // si il n'est pas trouvÃ© on quitte
             if(offset>=Line.size() || Line[offset++] != ':')
                 continue;
             // on saute jusqu'au contenu des variables
             while (offset<Line.size() && Line[offset]==' ') ++offset;
-            // on  extrait le 2ème mot
+            // on  extrait le 2Ã¨me mot
             while (offset<Line.size()) Value.push_back(Line[offset++]);
             // afectation de la valeur;
             TabValue[File][Key] = Value;
@@ -86,20 +86,20 @@ namespace SpaceInvader
 
     char GetValueChar(const string &Value, const string &File, const char &defaultValue)
     {
-        // on essaye de récupérer la valeur attachée à Value
+        // on essaye de rÃ©cupÃ©rer la valeur attachÃ©e Ã  Value
         try
         {
-            // On récupère les constante stocker dans File
+            // On rÃ©cupÃ¨re les constante stocker dans File
             const std::map<std::string, std::string> &ArrayVal = LoadFile(File);
-            // On récupère la valeur de la clée
+            // On rÃ©cupÃ¨re la valeur de la clÃ©e
             std::map<std::string, std::string>::const_iterator val = ArrayVal.find(Value);
-            // si elle n'existe pas ou est invalide on renvoie la valeur par défaut
+            // si elle n'existe pas ou est invalide on renvoie la valeur par dÃ©faut
             if(val == ArrayVal.end() || val->second.size()==0)
                 return defaultValue;
-            // sinon on retourne la première lettre stockée
+            // sinon on retourne la premiÃ¨re lettre stockÃ©e
             return val->second[0];
         }
-        // si le fichier est introuvable ou n'importe quelle erreur on renvoie la valeur par défaut
+        // si le fichier est introuvable ou n'importe quelle erreur on renvoie la valeur par dÃ©faut
         catch(...)
         {
             return defaultValue;
@@ -108,20 +108,20 @@ namespace SpaceInvader
 
     string GetValueStr(const string &Value, const string &File, const string &defaultValue)
     {
-        // on essaye de récupérer la valeur attachée à Value
+        // on essaye de rÃ©cupÃ©rer la valeur attachÃ©e Ã  Value
         try
         {
-            //  on charge le fichier en mémoire et on le stock
+            //  on charge le fichier en mÃ©moire et on le stock
             const std::map<std::string, std::string> &ArrayVal = LoadFile(File);
-            // on récupére la valeur attachée à la clée
+            // on rÃ©cupÃ©re la valeur attachÃ©e Ã  la clÃ©e
             std::map<std::string, std::string>::const_iterator val = ArrayVal.find(Value);
             // si elle n'existe pas
             if(val == ArrayVal.end() || val->second.size()==0)
                 return defaultValue;
-            //sinon on renvoie la valeur attachée à la variable
+            //sinon on renvoie la valeur attachÃ©e Ã  la variable
             return val->second;
         }
-        // si le fichier est introuvable ou n'importe quelle erreur on renvoie la valeur par défaut
+        // si le fichier est introuvable ou n'importe quelle erreur on renvoie la valeur par dÃ©faut
         catch(...)
         {
             return defaultValue;
@@ -129,7 +129,7 @@ namespace SpaceInvader
 
     }
 
-    // fonction qui permet de verifier si le nombre est un non signé
+    // fonction qui permet de verifier si le nombre est un non signÃ©
     bool isUnsignedValue(const string &ValTest)
     {
         for(const char &Value : ValTest)
@@ -138,10 +138,10 @@ namespace SpaceInvader
         return true;
     }
 
-    // permet de traduire une chaine de caractére en valeur numérique
+    // permet de traduire une chaine de caractÃ©re en valeur numÃ©rique
     unsigned AliasToValueInt(const string &Value)
     {
-        // si la valeur est une couleur connue alors on renvois sa valeur numérique
+        // si la valeur est une couleur connue alors on renvois sa valeur numÃ©rique
         if("KJaune" == Value)
             return KJaune;
         if("KNoir" == Value)
@@ -156,29 +156,29 @@ namespace SpaceInvader
             return KMAgenta;
         if("KCyan" == Value)
             return KCyan;
-        // sinon on ne peut pas géré
+        // sinon on ne peut pas gÃ©rÃ©
         throw(runtime_error("Cannot Find Alias"));
     }
 
     unsigned GetValueInt(const string &Value, const string &File, const unsigned &defaultValue)
     {
-        // on essaye de récupérer la valeur attacher à Value
+        // on essaye de rÃ©cupÃ©rer la valeur attacher Ã  Value
         try
         {
-            //  on charge le fichier en mémoire et on le stock
+            //  on charge le fichier en mÃ©moire et on le stock
             const std::map<std::string, std::string> &ArrayVal = LoadFile(File);
-            // on récupére la valeur attacher à Value
+            // on rÃ©cupÃ©re la valeur attacher Ã  Value
             std::map<std::string, std::string>::const_iterator val = ArrayVal.find(Value);
             // si elle n'existe pas
             if(val == ArrayVal.end() || val->second.size()==0)
                 return defaultValue;
-            // si c'est une valeur non signée on l'extrait
+            // si c'est une valeur non signÃ©e on l'extrait
             else if(isUnsignedValue(val->second))
                 return atoi(val->second.data());
-            // sinon on essait de traduire le supposé alias contenu
+            // sinon on essait de traduire le supposÃ© alias contenu
             return AliasToValueInt(val->second);
         }
-        // si le fichier n'existe pas ou l'alias n'est pas traduisible on retourne la valeur par défaut
+        // si le fichier n'existe pas ou l'alias n'est pas traduisible on retourne la valeur par dÃ©faut
         catch(...)
         {
             return defaultValue;
