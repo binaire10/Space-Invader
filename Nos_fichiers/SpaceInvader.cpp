@@ -792,6 +792,7 @@ namespace SpaceInvader
      */
     void Run()
     {
+#ifdef __WIN32__
         QThread Thread; // on crée un objet QThread pour le Timer de QMediaPlayer
         QMediaPlayer player; // on crée un lecteur de Musique
         player.moveToThread(&Thread); // on le place dans le Thread
@@ -806,7 +807,7 @@ namespace SpaceInvader
 
         player.setMedia(playlist[0]);
         player.play(); // On joue la musque d'introduction au jeux
-
+#endif
         srand (time(NULL));
         set_input_mode();
         MainFont(); // On affiche un Invader
@@ -827,16 +828,19 @@ namespace SpaceInvader
             initSpace(Space, PosMe, LineInvader); // Variable initialisant
             cout << CleanScreen(); // on efface l'écran pour rafraichir l'image
 
+#ifdef __WIN32__
             player.stop();
             player.setMedia(playlist[3]); // on joue la musique de scenario
+
             player.play();
-
+#endif
             ManageScenar(Level); // démarage de l'affichage du scénario
-
+#ifdef __WIN32__
             player.stop();
             player.setMedia(playlist[4]); // a la fin du scenario on lance la musique de jeux
-            player.play();
 
+            player.play();
+#endif
             cout << CleanScreen(); // on efface l'écran
             unsigned Turn(0); // nombre de tours écoulés
             while(!WinTest(Space, LineInvader) && !LoseTest(Space, Space.size()-1)) // on boucle tan que le joueur ou l'invader n'a pas gagne ou qu'il soit arrive sur la dernier ligne
@@ -876,26 +880,30 @@ namespace SpaceInvader
                     if(duration<350000)
                         usleep(350000-duration); // on attend que le temps manquant ce soit écoulé
                 }
+#ifdef __WIN32__
                 if(player.state() != QMediaPlayer::PlayingState) // si la musique s'arrete on la relance
                     player.play();
+#endif
 
                 ManageInvaderMove(Space, Increment,  LineInvader, PosInvader); // on déplace l'invader
             }
             if(PlayerLife==0)
             {
-
+#ifdef __WIN32__
                 player.stop();
                 player.setMedia(playlist[2]); // on joue la musique de game over
                 player.play();
-
+#endif
                 MainFont(KNoir,KRouge, KNoir); // image de game over
             }
             FinalScore += Score;
             if(Level == 4)
             {
+#ifdef __WIN32__
                 player.stop();
                 player.setMedia(playlist[1]); // musique de victoire
                 player.play();
+#endif
                 MainFont(KNoir,KVert, KNoir); // image de victoire
                 cout << "Score Final "<< FinalScore; // affichage du score final
 
