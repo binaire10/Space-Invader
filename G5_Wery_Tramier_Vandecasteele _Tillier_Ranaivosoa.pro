@@ -1,5 +1,5 @@
 TEMPLATE = app
-CONFIG += console c++11
+CONFIG += console
 CONFIG -= app_bundle
 QT += multimedia
 
@@ -22,3 +22,5 @@ HEADERS += \
     Nos_fichiers/MyType.h \
     Nos_fichiers/SpaceInvader.h \
     Nos_fichiers/readconfig.h
+
+QMAKE_CXXFLAGS += -O3 -std=c++11
